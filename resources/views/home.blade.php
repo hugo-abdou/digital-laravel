@@ -12,6 +12,8 @@
 <body>
     <!-- hero section -->
 	<div class="relative">
+
+
 		<img
 			src="/assets/Rectangle.png"
 			alt="Rectangle photo"
