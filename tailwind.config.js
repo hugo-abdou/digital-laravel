@@ -6,6 +6,7 @@ module.exports = {
                 "d-yellow": "#F0A500",
                 "gray-lv-1": "#F0F0F0",
                 black: "#222222",
+                "black-gray": "#555555",
             },
             fontFamily: {
                 nunito: ["nunito", "sans-serif"],
