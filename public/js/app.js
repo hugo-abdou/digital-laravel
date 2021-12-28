@@ -2062,6 +2062,29 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var lastScrollTop = 0;
+var navBar = document.getElementById("nav-bar");
+
+var handleScroll = function handleScroll() {
+  var st = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (st > 100) {
+    if (!navBar.classList.contains("float")) {
+      console.log("add");
+      navBar.classList.add("float");
+    }
+  } else {
+    if (navBar.classList.contains("float")) {
+      console.log("remove");
+      navBar.classList.remove("float");
+    }
+  }
+};
+
+window.document.addEventListener("scroll", function () {
+  handleScroll();
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

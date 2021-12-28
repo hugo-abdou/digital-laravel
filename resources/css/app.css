@@ -2,3 +2,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* navbar transition */
+.float {
+    @apply bg-white;
+}
+.float #navigation nav {
+    @apply text-black;
+}
+.float #navigation button{
+    @apply hidden;
+}

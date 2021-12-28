@@ -394,14 +394,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .top-0{
   top: 0px;
 }
-.left-0{
-  left: 0px;
-}
 .bottom-0{
   bottom: 0px;
 }
 .right-0{
   right: 0px;
+}
+.left-0{
+  left: 0px;
 }
 .z-10{
   z-index: 10;
@@ -582,12 +582,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-1\/2{
   width: 50%;
-}
-.w-\[964\]{
-  width: 964;
-}
-.w-\[964px\]{
-  width: 964px;
 }
 .max-w-\[601px\]{
   max-width: 601px;
@@ -1062,6 +1056,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* navbar transition */
+.float{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.float #navigation nav{
+  --tw-text-opacity: 1;
+  color: rgb(34 34 34 / var(--tw-text-opacity));
+}
+.float #navigation button{
+  display: none;
 }
 .hover\:bg-d-yellow:hover{
   --tw-bg-opacity: 1;

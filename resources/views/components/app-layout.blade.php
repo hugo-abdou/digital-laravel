@@ -10,15 +10,12 @@
 </head>
 
 <body class="font-nunito">
+    <x-nav-bar />
     {{ $slot }}
     <x-footer />
-
+    <script src="{{ asset('js/app.js') }}"></script>
     <!-- just for devlopment -->
-    <script async="" src="http: //localhost:3000/browser-sync/browser-sync-client.js?v=2.27.7"></script>
-    <script id="__bs_script__">
-        //<![CDATA[
-        document.write("<script async src='http://localhost:3000/browser-sync/browser-sync-client.js?v=2.27.7'><\/script>".replace("HOST", location.hostname)); //]]>
-    </script>
+    <script async="" src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.27.7"></script>
 </body>
 
 </html>
