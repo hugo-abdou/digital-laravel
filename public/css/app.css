@@ -400,6 +400,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-0{
   bottom: 0px;
 }
+.right-0{
+  right: 0px;
+}
 .z-10{
   z-index: 10;
 }
@@ -579,6 +582,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-1\/2{
   width: 50%;
+}
+.w-\[964\]{
+  width: 964;
+}
+.w-\[964px\]{
+  width: 964px;
 }
 .max-w-\[601px\]{
   max-width: 601px;

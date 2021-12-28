@@ -86,7 +86,7 @@
 			</div>
 
 			<!-- hero content -->
-			<div class="flex my-32">
+			<div class="flex my-32 relative w-full">
 				<!-- description -->
 				<div class="text-white w-full lg:w-2/3 flex justify-start items-center">
 					<div class="space-y-8 w-[681px]">
@@ -104,15 +104,16 @@
 						</p>
 
 						<button
-							class="border bg-white font-bold text-d-yellow text-p-sm md:text-p rounded-full px-12 py-4">Free
+							class="border bg-white font-bold text-yellow-darck text-p-sm md:text-p rounded-full px-12 py-4">Free
 							Consultation</button>
 					</div>
 				</div>
 
 				<!-- dashboard -->
-				<div class="hidden lg:flex w-2/3 justify-center items-end">
-					<img src="/assets/Template-Flat-Presentation.png" class="mb-20 object-cover" />
-				</div>
+				<img src="/assets/Template-Flat-Presentation.png"
+					class="absolute w-2/3 bottom-0 right-0 mb-20 object-cover" />
+				{{-- <div class="hidden lg:flex  justify-center items-end">
+				</div> --}}
 			</div>
 		</div>
 	</div>
