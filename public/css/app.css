@@ -565,8 +565,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[681px\]{
   width: 681px;
 }
-.w-1\/2{
-  width: 50%;
+.w-2\/3{
+  width: 66.666667%;
 }
 .w-14{
   width: 3.5rem;
@@ -577,11 +577,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-16{
   width: 4rem;
 }
-.w-1\/3{
-  width: 33.333333%;
-}
-.w-2\/3{
-  width: 66.666667%;
+.w-1\/2{
+  width: 50%;
 }
 .max-w-\[601px\]{
   max-width: 601px;
@@ -696,9 +693,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-hidden{
   overflow: hidden;
 }
-.overflow-visible{
-  overflow: visible;
-}
 .overflow-x-auto{
   overflow-x: auto;
 }
@@ -788,10 +782,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
-}
-.object-fill{
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 .object-left-top{
   -o-object-position: left top;
@@ -931,11 +921,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-center{
   text-align: center;
 }
-.font-nunito{
-  font-family: nunito, sans-serif;
-}
 .font-prompt{
   font-family: prompt, sans-serif;
+}
+.font-nunito{
+  font-family: nunito, sans-serif;
 }
 .text-p-sm{
   font-size: 18px;
@@ -1157,14 +1147,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:w-1\/2{
     width: 50%;
   }
+  .lg\:w-2\/3{
+    width: 66.666667%;
+  }
   .lg\:w-1\/4{
     width: 25%;
   }
   .lg\:w-2\/4{
     width: 50%;
-  }
-  .lg\:w-2\/3{
-    width: 66.666667%;
   }
   .lg\:flex-row{
     flex-direction: row;

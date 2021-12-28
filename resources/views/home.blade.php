@@ -117,42 +117,43 @@
 		</div>
 	</div>
 	<!-- why hiring us -->
-	<div class="relative flex flex-col lg:flex-row bg-gray-lv-1 px-10">
+	<div class="relative  bg-gray-lv-1 px-10">
 		<div class="bg-d-yellow absolute left-0 w-full lg:w-1/4 h-1/4 lg:h-auto lg:inset-y-0"></div>
-		<div class="relative w-full lg:w-1/2 flex justify-center items-center mt-20 lg:mt-0">
-			<img src="/assets/Rectangle68.png" alt="why hiring us image" />
-		</div>
-
-		<div class="flex justify-center items-center lg:w-1/2 py-28">
-			<div class="pb-10 text-black-gray">
-				<div>
-					<h3 class="text-p md:text-h2 text-black font-semibold ">Why Hiring Us</h3>
-					<span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
-					<span class="bg-yellow-darck ml-4 h-1.5 w-14 rounded-r-md inline-block"></span>
+		<div class="container mx-auto flex flex-col lg:flex-row">
+			<div class="relative w-full lg:w-1/2 flex justify-center items-center mt-20 lg:mt-0">
+				<img src="/assets/Rectangle68.png" alt="why hiring us image" />
+			</div>
+			<div class="flex justify-center items-center lg:w-1/2 py-28">
+				<div class="pb-10 text-black-gray">
+					<div>
+						<h3 class="text-p md:text-h2 text-black font-semibold ">Why Hiring Us</h3>
+						<span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
+						<span class="bg-yellow-darck ml-4 h-1.5 w-14 rounded-r-md inline-block"></span>
+					</div>
+					<h4 class="text-p-sm md:text-p mt-8 text-black">
+						You are accountable for knowing the information needed to
+						stay connected with your professional
+						<span class="text-d-yellow">community</span>
+						as well as with your own professional self!
+					</h4>
+					<p class="mt-8 text-p-xs md:text-p-sm">
+						In addition to
+						<b>productivity</b> and
+						<b>morale</b>, the strength of the
+						<b>leadership and team connection</b>
+						can impact
+						<b>how team members view their value</b> in your organization.
+					</p>
+					<p class="mt-2 text-p-xs md:text-p-sm">
+						If there is
+						<b>not a strong connection</b>, there's a good chance members will not feel
+						connected to leadership or the organization, which can ultimately
+						<b>lead a high turnover rate</b>!
+					</p>
+					<button
+						class="border-2 font-semibold bg-black text-white text-p-xs md:text-p-sm rounded-full mt-8 px-12 py-4">Free
+						Consultation</button>
 				</div>
-				<h4 class="text-p-sm md:text-p mt-8 text-black">
-					You are accountable for knowing the information needed to
-					stay connected with your professional
-					<span class="text-d-yellow">community</span>
-					as well as with your own professional self!
-				</h4>
-				<p class="mt-8 text-p-xs md:text-p-sm">
-					In addition to
-					<b>productivity</b> and
-					<b>morale</b>, the strength of the
-					<b>leadership and team connection</b>
-					can impact
-					<b>how team members view their value</b> in your organization.
-				</p>
-				<p class="mt-2 text-p-xs md:text-p-sm">
-					If there is
-					<b>not a strong connection</b>, there's a good chance members will not feel
-					connected to leadership or the organization, which can ultimately
-					<b>lead a high turnover rate</b>!
-				</p>
-				<button
-					class="border-2 font-semibold bg-black text-white text-p-xs md:text-p-sm rounded-full mt-8 px-12 py-4">Free
-					Consultation</button>
 			</div>
 		</div>
 	</div>
