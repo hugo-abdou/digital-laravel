@@ -88,7 +88,7 @@
 			<!-- hero content -->
 			<div class="flex my-32">
 				<!-- description -->
-				<div class="text-white w-full lg:w-1/2 flex justify-center items-center">
+				<div class="text-white w-full lg:w-2/3 flex justify-start items-center">
 					<div class="space-y-8 w-[681px]">
 						<h1 class="font-medium font-prompt text-h2 md:text-h1">
 							Discover The True Potential Of You And Your People
@@ -110,8 +110,8 @@
 				</div>
 
 				<!-- dashboard -->
-				<div class="hidden lg:flex w-1/2 justify-center items-end">
-					<img src="/assets/Template-Flat-Presentation.png" class="mb-20" />
+				<div class="hidden lg:flex w-2/3 justify-center items-end">
+					<img src="/assets/Template-Flat-Presentation.png" class="mb-20 object-cover" />
 				</div>
 			</div>
 		</div>
