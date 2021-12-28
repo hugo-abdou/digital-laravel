@@ -8,8 +8,15 @@
     @apply bg-white;
 }
 .float #navigation nav {
-    @apply text-black;
+    @apply text-black lg:flex text-p-xs xl:text-p-sm;
 }
 .float #navigation button{
+    @apply hidden;
+}
+.float #navigation #burger{
+    @apply block lg:hidden;
+}
+
+.float #navigation2 {
     @apply hidden;
 }

@@ -169,8 +169,8 @@
 			<span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
 			<span class="bg-yellow-darck ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
 		</div>
-		<div class="flex flex-wrap justify-center gap-16 pt-16 pb-44">
-			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px]">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-5  pt-16 pb-44">
+			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px] mx-auto">
 				<div class="w-full">
 					<img src="/assets/books.jpg" class="aspect-video w-full" alt />
 				</div>
@@ -185,13 +185,13 @@
 					</div>
 					<div class="mt-6 text-center">
 
-						<button class=" bg-d-yellow text-white px-8 py-2 rounded-lg">Request
+						<button class=" bg-d-yellow text-white px-8 py-2 rounded-lg whitespace-nowrap">Request
 							challenge</button>
 					</div>
 
 				</div>
 			</div>
-			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px]">
+			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px] mx-auto">
 				<div class="w-full">
 					<img src="/assets/image61.png" class="aspect-video w-full" alt />
 				</div>
@@ -207,12 +207,12 @@
 
 					<div class="mt-6 text-center">
 
-						<button class=" bg-d-yellow text-white px-8 py-2 rounded-lg">Request
+						<button class=" bg-d-yellow text-white px-8 py-2 rounded-lg whitespace-nowrap">Request
 							challenge</button>
 					</div>
 				</div>
 			</div>
-			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px]">
+			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px] mx-auto">
 				<div class="w-full">
 					<img src="/assets/image62.png" class="aspect-video w-full" alt />
 				</div>
@@ -227,12 +227,12 @@
 					</div>
 
 					<div class="mt-6 text-center">
-						<button class=" bg-d-yellow text-white px-8 py-2 rounded-lg">Request
+						<button class=" bg-d-yellow text-white px-8 py-2 rounded-lg whitespace-nowrap">Request
 							challenge</button>
 					</div>
 				</div>
 			</div>
-			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px]">
+			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px] mx-auto">
 				<div class="w-full">
 					<img src="/assets/image63.png" class="aspect-video w-full" alt />
 				</div>
@@ -247,7 +247,7 @@
 					</div>
 
 					<div class="mt-6 text-center">
-						<button class=" bg-d-yellow text-white px-8 py-2 rounded-lg">Request
+						<button class=" bg-d-yellow text-white px-8 py-2 rounded-lg whitespace-nowrap">Request
 							challenge</button>
 					</div>
 				</div>

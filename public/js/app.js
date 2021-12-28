@@ -2071,12 +2071,12 @@ var handleScroll = function handleScroll() {
   if (st > 100) {
     if (!navBar.classList.contains("float")) {
       console.log("add");
-      navBar.classList.add("float");
+      navBar.classList.add("float", "shadow");
     }
   } else {
     if (navBar.classList.contains("float")) {
       console.log("remove");
-      navBar.classList.remove("float");
+      navBar.classList.remove("float", "shadow");
     }
   }
 };

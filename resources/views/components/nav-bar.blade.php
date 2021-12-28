@@ -1,12 +1,14 @@
-<div id="nav-bar" class="fixed z-50 inset-x-0">
+<div id="nav-bar" class="fixed z-50 inset-x-0 ">
     <div class="container px-9 mx-auto">
         <!-- navigation -->
         <div id="navigation" class="flex justify-between items-center whitespace-nowrap py-3">
             <!-- logo -->
-            <a href="/">
-                <span class="sr-only">Digital Self</span>
-                <img src="/assets/Digital Self.png" alt="dijital self logo" />
-            </a>
+            <div class="w-12 md:w-full overflow-hidden">
+                <a href="/" class="!w-48 block">
+                    <span class="sr-only">Digital Self</span>
+                    <img src="/assets/Digital Self.png" class="" alt="dijital self logo" />
+                </a>
+            </div>
 
             <!-- nav links -->
             <nav class="hidden 2xl:flex justify-center items-center space-x-5 text-white font-semibold text-p-sm py-4">
@@ -20,9 +22,10 @@
             <div class="text-white text-p-sm space-x-5 items-center flex">
                 <button class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">free
                     sign-up</button>
-                <button class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2">login</button>
+                <button
+                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden md:block">login</button>
 
-                <button type="button" class="text-d-yellow lg:hidden" aria-expanded="false">
+                <button id="burger" type="button" class="text-d-yellow lg:hidden" aria-expanded="false">
                     <span class="sr-only">Open menu</span>
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" aria-hidden="true">
@@ -35,7 +38,7 @@
         </div>
         <!-- nav links for medium desplay -->
 
-        <nav class="hidden md:flex 2xl:hidden items-center space-x-5 text-white my-4">
+        <nav id="navigation2" class="hidden md:flex 2xl:hidden items-center space-x-5 text-white my-4">
             <a href="#">Manage Group</a>
             <a href="#">Control Your Career</a>
             <a href="#">Lead challenges</a>
