@@ -11,7 +11,11 @@
 
 <body class="font-nunito">
     <x-nav-bar />
-    {{ $slot }}
+
+    {{-- push the footer to the bottom --}}
+    <div class="min-h-[calc(100vh-339px)]">
+        {{ $slot }}
+    </div>
     <x-footer />
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- just for devlopment -->
