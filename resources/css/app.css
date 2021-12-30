@@ -14,7 +14,13 @@
 .float #navigation nav {
     @apply text-black lg:flex text-p-xs xl:text-p-sm;
 }
-.float #navigation button{
+.float #navigation #actions a {
+    @apply text-d-yellow;
+}
+.float #navigation a:hover {
+    @apply text-white;
+}
+.float #navigation #actions a{
     @apply hidden;
 }
 .float #navigation #burger{

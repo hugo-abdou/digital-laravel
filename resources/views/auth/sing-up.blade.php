@@ -14,7 +14,7 @@
             </h4>
             <p class="mt-2 text-p-xs text-black-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
                 sit porttitor neque.</p>
-            <a href="/sign-up?user_type=Group Manager"
+            <a href="/register?user_type=Group Manager"
                 class="font-semibold bg-black-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
                 up</a>
 
@@ -27,7 +27,7 @@
             </h4>
             <p class="mt-2 text-p-xs text-black-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
                 sit porttitor neque.</p>
-            <a href="/sign-up?user_type=Indivudual User"
+            <a href="/register?user_type=Indivudual User"
                 class="font-semibold bg-black-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
                 up</a>
 
@@ -40,7 +40,7 @@
             </h4>
             <p class="mt-2 text-p-xs text-black-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
                 sit porttitor neque.</p>
-            <a href="/sign-up?user_type=Challenge Manager"
+            <a href="/register?user_type=Challenge Manager"
                 class="font-semibold bg-black-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
                 up</a>
 

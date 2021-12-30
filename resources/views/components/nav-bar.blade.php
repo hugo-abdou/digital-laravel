@@ -19,11 +19,14 @@
                 <a href="#">support</a>
             </nav>
 
-            <div class="text-white text-p-sm space-x-5 items-center flex">
-                <button class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">free
-                    sign-up</button>
-                <button
-                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden md:block">login</button>
+            <div id="actions" class="text-white text-p-sm space-x-5 items-center flex ml-10">
+
+                <a href="/register"
+                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">free sign
+                    up</a>
+                <a href="/login"
+                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">login</a>
+
 
                 <button id="burger" type="button" class="text-d-yellow lg:hidden" aria-expanded="false">
                     <span class="sr-only">Open menu</span>
