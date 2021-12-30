@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,14 @@ Route::view('/about-us', 'about');
 
 Route::view('/contact-us', 'contact');
 
-Route::view('/login', 'sing-up');
+Route::view('/login', 'login');
+
+Route::get('/sign-up', function (Request $request) {
+    if (!$request->has('user_type')) return view('sing-up');
+
+    return view('sing-up-form', [
+        'request' => $request
+    ]);
+});
+
+Route::view('/payment', 'payment');
