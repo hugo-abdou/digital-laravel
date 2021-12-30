@@ -5,7 +5,8 @@
             <a href="/sign-up" class="underline">Create Account</a>
         </div>
     </x-slot>
-    <form class="grid grid-cols-6 gap-x-10 gap-y-7">
+    <form method="post" action="/login" class="grid grid-cols-6 gap-x-10 gap-y-7">
+        @csrf
         <label for="E-mail" class="block col-span-4">
             <span class="text-p-sm">E-mail Adress</span>
             <input type="email" name="email" id="E-mail" class="w-full border border-gray-300 p-3 mt-2">
