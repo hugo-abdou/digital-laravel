@@ -5,11 +5,14 @@
 		<!-- overlay -->
 		<div class="absolute bg-gradient-to-r from-[#000]/70 via-[#000]/70 to-[#000]/20 inset-0"></div>
 
-		<div class="relative z-10 container mx-auto p-9">
+		<div class="relative">
 			<!-- hero content -->
-			<div class="flex my-32 relative w-full">
+			<div class="flex py-32 container mx-auto p-9">
+				<!-- dashboard -->
+				<img src="/assets/Template-Flat-Presentation.png"
+					class="absolute bottom-20 w-4/6 hidden xl:flex -right-28 object-cover" />
 				<!-- description -->
-				<div class="text-white w-full lg:w-2/3 flex justify-start items-center">
+				<div class="relative text-white w-full xl:w-2/4 flex justify-start items-center">
 					<div class="space-y-8 w-[681px]">
 						<h1 class="font-medium font-prompt text-h2 md:text-h1">
 							Discover The True Potential Of You And Your People
@@ -30,11 +33,7 @@
 					</div>
 				</div>
 
-				<!-- dashboard -->
-				<img src="/assets/Template-Flat-Presentation.png"
-					class="absolute w-2/3 bottom-0 right-0 mb-20 object-cover" />
-				{{-- <div class="hidden lg:flex  justify-center items-end">
-				</div> --}}
+
 			</div>
 		</div>
 	</div>
