@@ -9,11 +9,13 @@
         @csrf
         <label for="E-mail" class="block col-span-4">
             <span class="text-p-sm">E-mail Adress</span>
-            <input type="email" name="email" id="E-mail" class="w-full border border-gray-300 p-3 mt-2">
+            <input type="email" name="email" id="E-mail"
+                class="w-full border border-gray-300 @error('email') !border-red-500 @enderror p-3 mt-2">
         </label>
         <label for="Password" class="block col-span-4">
             <span class="text-p-sm">Password</span>
-            <input type="password" name="password" id="Password" class="w-full border border-gray-300 p-3 mt-2">
+            <input type="password" name="password" id="Password"
+                class="w-full border border-gray-300 @error('password') !border-red-500 @enderror p-3 mt-2">
         </label>
         <div class="col-span-6">
             <button type="submit"

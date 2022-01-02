@@ -21,25 +21,30 @@
     <div>
         <div class="flex flex-col-reverse lg:flex-row container mx-auto mb-36 mt-28">
             <div class="flex justify-center items-center lg:px-9 lg:w-1/2 ">
-                <div class="bg-gray-lv-1 w-[560px] p-12 pt-20 space-y-8">
+                <form method="post" action="/contact-us" class="bg-gray-lv-1 w-[560px] p-12 pt-20 space-y-8">
+                    @csrf
                     <label for="full-name" class="block">
                         <span class="text-p-sm">Full Name</span>
-                        <input type="text" id="full-name" class="w-full border p-3 mt-2">
+                        <input type="text" name="name" id="full-name"
+                            class="w-full border p-3 mt-2 border-gray-300 @error('name') !border-red-500 @enderror">
                     </label>
                     <label for="E-mail" class="block">
                         <span class="text-p-sm">E-mail</span>
-                        <input type="text" id="E-mail" class="w-full border p-3 mt-2">
+                        <input type="text" name="email" id="E-mail"
+                            class="w-full border p-3 mt-2 border-gray-300 @error('email') !border-red-500 @enderror">
                     </label>
                     <label for="Subject" class="block">
                         <span class="text-p-sm">Subject</span>
-                        <input type="text" id="Subject" class="w-full border p-3 mt-2">
+                        <input type="text" name="subject" id="Subject"
+                            class="w-full border p-3 mt-2 border-gray-300 @error('subject') !border-red-500 @enderror">
                     </label>
                     <label for="Message" class="block">
                         <span class="text-p-sm">Message</span>
-                        <textarea type="text" id="Message" class="w-full border p-3 mt-2"></textarea>
+                        <textarea name="message" id="Message"
+                            class="w-full border p-3 mt-2 border-gray-300 @error('message') !border-red-500 @enderror"></textarea>
                     </label>
                     <button class="mt-6 bg-d-yellow text-white px-8 py-2 rounded-full">Send Message</button>
-                </div>
+                </form>
             </div>
             <div class="flex justify-center items-center lg:w-1/2 px-9 mt-5 order-2 lg:order-1">
                 <div class="pb-10 max-w-[576px] lg:text-left">
@@ -47,7 +52,7 @@
                     <span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
                     <span class="bg-yellow-darck ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
 
-                    <div class="text-p-xs md:text-p-sm font-normal leading-7 mt-9 space-y-6">
+                    <div class="text-p-xs text-black-gray md:text-p-sm font-normal leading-7 mt-9 space-y-6">
                         <p>
                             <b>While the online courses are self-directed, we are definitely real people behind the
                                 scenes
