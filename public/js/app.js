@@ -46,21 +46,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var app = document.getElementById("app");
+window.addEventListener("load", function () {
+  var app = document.getElementById("app");
 
-if (app) {
-  (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.createInertiaApp)({
-    resolve: function resolve(name) {
-      return __webpack_require__("./resources/js/Pages lazy recursive ^\\.\\/.*$")("./".concat(name));
-    },
-    setup: function setup(_ref) {
-      var el = _ref.el,
-          App = _ref.App,
-          props = _ref.props;
-      (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(App, _objectSpread({}, props)), el);
-    }
-  });
-}
+  if (app) {
+    (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.createInertiaApp)({
+      resolve: function resolve(name) {
+        return __webpack_require__("./resources/js/Pages lazy recursive ^\\.\\/.*$")("./".concat(name));
+      },
+      setup: function setup(_ref) {
+        var el = _ref.el,
+            App = _ref.App,
+            props = _ref.props;
+        (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(App, _objectSpread({}, props)), el);
+      }
+    });
+  }
+});
 
 /***/ }),
 

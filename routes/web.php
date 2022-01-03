@@ -25,7 +25,7 @@ Route::post('/contact-us', function (Request $request) {
 
 Route::middleware('guest')->group(function () {
 
-    Route::view('/login', 'auth.login');
+    Route::view('/login', 'auth.login')->name('login');
 
     Route::get('/register', function (Request $request) {
         if (!$request->has('user_type')) return view('auth.sing-up');
@@ -41,5 +41,7 @@ Route::view('/payment', 'payment');
 //////////////////////////////////// dashboard routes ///////////////////////////////
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+    return inertia('Home', [
+        'user' => auth()->user()
+    ]);
+})->middleware('auth');
