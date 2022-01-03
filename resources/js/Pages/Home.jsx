@@ -7,7 +7,7 @@ export default function Home({user}) {
              <h1 className="text-7xl block">
                  Name: <span className="text-d-yellow">{user.name}</span>
              </h1>
-             {/* <Link method='post' href='/logout' >logout</Link> */}
+             <Link method='post' href='/logout' >logout</Link>
          </div>
     )
 }

@@ -69,7 +69,7 @@
 						<b>lead a high turnover rate</b>!
 					</p>
 					<a href="https://calendly.com/rogersvigne/free-consult-30-minute-meeting?month=2022-01"
-						class="border inline-block font-semibold bg-black text-white text-p-xs md:text-p-sm rounded-full mt-8 px-12 py-4">Free
+						class="border inline-block font-semibold bg-black text-white text-p-xs md:text-p-sm rounded-full mt-8 px-12 py-4">Schedule
 						Consultation</a>
 				</div>
 			</div>

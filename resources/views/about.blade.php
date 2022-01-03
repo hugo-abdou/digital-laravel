@@ -28,8 +28,11 @@
             </p>
             <span class="text-d-yellow mt-4 inline-block">watch a video</span>
         </div>
-        <div class="mt-9">
-            <img src="/assets/watch-vedio-image.png" alt="">
+        <div class="mt-9 aspect-video">
+            <iframe class="object-cover w-full h-full" src="https://www.youtube.com/embed/qpMHONlN7VQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
     </div>
     <!-- our mission -->
