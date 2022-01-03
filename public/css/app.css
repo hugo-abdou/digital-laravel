@@ -1346,9 +1346,8 @@ select{
   --tw-text-opacity: 1;
   color: rgb(240 165 0 / var(--tw-text-opacity));
 }
-.float #navigation a:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.float #navigation a:hover {
+    /* @apply text-white; */
 }
 .float #navigation #actions a{
   display: none;
@@ -1419,6 +1418,9 @@ select{
 }
 
 @media (min-width: 768px){
+  .md\:block{
+    display: block;
+  }
   .md\:flex{
     display: flex;
   }

@@ -18,7 +18,7 @@
     @apply text-d-yellow;
 }
 .float #navigation a:hover {
-    @apply text-white;
+    /* @apply text-white; */
 }
 .float #navigation #actions a{
     @apply hidden;

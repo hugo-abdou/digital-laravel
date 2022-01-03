@@ -25,7 +25,7 @@
                     class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">Sign-up
                     Free</a>
                 <a href="/login"
-                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">Login</a>
+                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden md:block">Login</a>
 
 
                 <button id="burger" type="button" class="text-d-yellow lg:hidden" aria-expanded="false">
@@ -42,7 +42,7 @@
         <!-- nav links for medium desplay -->
 
         <nav id="navigation2"
-            class="hidden md:flex 2xl:hidden items-center space-x-5 text-white my-4 font-semibold text-p-sm">
+            class="hidden lg:flex 2xl:hidden items-center space-x-5 text-white font-semibold text-p-sm my-4 ">
             <a href="/register?user_type=Group%20Manager">Manage Group</a>
             <a href="/register?user_type=Indivudual%20User">Control Your Career</a>
             <a href="/register?user_type=Challenge%20Manager">Lead Challenges</a>
