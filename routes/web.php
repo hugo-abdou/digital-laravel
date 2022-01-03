@@ -26,6 +26,7 @@ Route::post('/contact-us', function (Request $request) {
 Route::middleware('guest')->group(function () {
 
     Route::view('/login', 'auth.login')->name('login');
+    Route::view('/forget-password', 'auth.forget-password');
 
     Route::get('/register', function (Request $request) {
         if (!$request->has('user_type')) return view('auth.sing-up');

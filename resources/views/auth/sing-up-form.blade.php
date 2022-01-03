@@ -22,7 +22,7 @@
             @error('password') <span class="text-red-500">{{$message}}</span> @enderror
         </label>
         <label for="E-mail" class="block col-span-3">
-            <span class="text-p-sm">E-mail Adress</span>
+            <span class="text-p-sm">E-mail Address</span>
             <input type="email" name="email" id="E-mail"
                 class="w-full border border-gray-300 @error('email') !border-red-500 @enderror text-black-gray p-3 mt-2">
             @error('email') <span class="text-red-500">{{$message}}</span> @enderror
