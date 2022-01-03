@@ -34,11 +34,11 @@
             <div class="w-1/2">
                 <span class="text-p-sm">Links</span>
                 <ul class="mt-5 space-y-3">
-                    <li class="block text-sm text-gray-400">Home</li>
-                    <li class="block text-sm text-gray-400">About Us</li>
-                    <li class="block text-sm text-gray-400">Forum</li>
-                    <li class="block text-sm text-gray-400">Challenges</li>
-                    <li class="block text-sm text-gray-400">Contact Us</li>
+                    <li class="block text-sm text-gray-400"> <a href="/">Home</a> </li>
+                    <li class="block text-sm text-gray-400"> <a href="about-us">About Us</a></li>
+                    <li class="block text-sm text-gray-400"> <a href="/forum">Forum</a> </li>
+                    <li class="block text-sm text-gray-400"> <a href="/">Challenges</a> </li>
+                    <li class="block text-sm text-gray-400"> <a href="contact-us">Contact Us</a> </li>
                 </ul>
             </div>
             <div>

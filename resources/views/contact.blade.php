@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout title="contact us">
     <!-- hero section -->
     <div class="relative">
         <img src="/assets/contact-us-background.png" alt="Rectangle photo"

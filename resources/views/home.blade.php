@@ -1,11 +1,11 @@
-<x-app-layout>
+<x-app-layout title="{{config('app.name')}}">
 	<!-- hero section -->
-	<div class="relative">
+	<div class="relative overflow-hidden ">
 		<img src="/assets/Rectangle.png" alt="Rectangle photo" class="absolute h-full w-full object-cover object-top" />
 		<!-- overlay -->
 		<div class="absolute bg-gradient-to-r from-[#000]/70 via-[#000]/70 to-[#000]/20 inset-0"></div>
 
-		<div class="relative">
+		<div class="relative pt-10">
 			<!-- hero content -->
 			<div class="flex py-32 container mx-auto p-9">
 				<!-- dashboard -->
@@ -19,17 +19,14 @@
 							<span class="text-d-yellow">Remotely</span> !
 						</h1>
 						<p class="text-p-sm md:text-p">
-							Do you want a way to easily
-							<b class="underline">manage</b>,
-							<b class="underline">understand</b> and
-							<b class="underline">engage</b> your group remotely ? to create awesome
-							<b class="underline">challenges</b> for them? A way to take
-							<b class="underline">control</b> of your career ?
+							Offering a Suite of Professional, Wellness and Personal Development Dashboards and Features,
+							Digital Truth enables you
+							to Learn, Challenge & Inspire Remote Groups & Teams Efficiently!
 						</p>
 
-						<button
-							class="border bg-white font-bold text-yellow-darck text-p-sm md:text-p rounded-full px-12 py-4">Free
-							Consultation</button>
+						<a href="https://calendly.com/rogersvigne/free-consult-30-minute-meeting?month=2022-01"
+							class="border inline-block bg-white font-bold text-yellow-darck text-p-sm md:text-p rounded-full px-12 py-4">Schedule
+							Consultation</a>
 					</div>
 				</div>
 
@@ -71,9 +68,9 @@
 						connected to leadership or the organization, which can ultimately
 						<b>lead a high turnover rate</b>!
 					</p>
-					<button
-						class="border-2 font-semibold bg-black text-white text-p-xs md:text-p-sm rounded-full mt-8 px-12 py-4">Free
-						Consultation</button>
+					<a href="https://calendly.com/rogersvigne/free-consult-30-minute-meeting?month=2022-01"
+						class="border inline-block font-semibold bg-black text-white text-p-xs md:text-p-sm rounded-full mt-8 px-12 py-4">Free
+						Consultation</a>
 				</div>
 			</div>
 		</div>

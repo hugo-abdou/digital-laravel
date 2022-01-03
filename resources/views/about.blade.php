@@ -1,4 +1,5 @@
-<x-app-layout>
+<x-app-layout title="about us">
+
     <!-- hero section -->
     <div class="relative">
         <img src="/assets/about-us-hero-image.png" alt="Rectangle photo"

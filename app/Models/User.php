@@ -18,7 +18,7 @@ class User extends Authenticatable
     {
         parent::boot();
         static::created(function ($model) {
-            Mail::to('email.test@gmail.com')->send(new WelcomeMail());
+            Mail::to($model->email)->send(new WelcomeMail());
         });
     }
 
@@ -27,11 +27,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.

@@ -12,20 +12,20 @@
 
             <!-- nav links -->
             <nav class="hidden 2xl:flex justify-center items-center space-x-5 text-white font-semibold text-p-sm py-4">
-                <a href="#">Manage Group</a>
-                <a href="#">Control Your Career</a>
-                <a href="#">Lead challenges</a>
+                <a href="/register?user_type=Group%20Manager">Manage Group</a>
+                <a href="/register?user_type=Indivudual%20User">Control Your Career</a>
+                <a href="/register?user_type=Challenge%20Manager">Lead challenges</a>
                 <a href="#">upcoming challenges</a>
-                <a href="#">support</a>
+                <a href="/contact-us">support</a>
             </nav>
 
             <div id="actions" class="text-white text-p-sm space-x-5 items-center flex ml-10">
 
                 <a href="/register"
-                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">free sign
-                    up</a>
+                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">Sign-up
+                    Free</a>
                 <a href="/login"
-                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">login</a>
+                    class="border border-d-yellow hover:bg-d-yellow rounded-full px-6 py-2 hidden lg:block">Login</a>
 
 
                 <button id="burger" type="button" class="text-d-yellow lg:hidden" aria-expanded="false">
@@ -41,12 +41,13 @@
         </div>
         <!-- nav links for medium desplay -->
 
-        <nav id="navigation2" class="hidden md:flex 2xl:hidden items-center space-x-5 text-white my-4">
-            <a href="#">Manage Group</a>
-            <a href="#">Control Your Career</a>
-            <a href="#">Lead challenges</a>
-            <a href="#">upcoming challenges</a>
-            <a href="#">support</a>
+        <nav id="navigation2"
+            class="hidden md:flex 2xl:hidden items-center space-x-5 text-white my-4 font-semibold text-p-sm">
+            <a href="/register?user_type=Group%20Manager">Manage Group</a>
+            <a href="/register?user_type=Indivudual%20User">Control Your Career</a>
+            <a href="/register?user_type=Challenge%20Manager">Lead Challenges</a>
+            <a href="#">Upcoming Challenges</a>
+            <a href="/contact-us">Support</a>
         </nav>
 
         <!-- navigation for mobile -->

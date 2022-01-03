@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["./resources/**/*.blade.php", "./resources/**/*.js"],
+    content: ["./resources/**/*.blade.php", "./resources/**/{*.js,*.jsx}"],
     theme: {
         extend: {
             colors: {

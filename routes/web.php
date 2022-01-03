@@ -20,6 +20,7 @@ Route::post('/contact-us', function (Request $request) {
         'message' => ['required', 'string'],
     ]);
     Mail::to('email.test@gmail.com')->send(new ContactMail($data));
+    return redirect('/');
 });
 
 Route::middleware('guest')->group(function () {
@@ -40,5 +41,5 @@ Route::view('/payment', 'payment');
 //////////////////////////////////// dashboard routes ///////////////////////////////
 
 Route::get('/dashboard', function () {
-    return inertia('Home');
+    return view('dashboard');
 });
