@@ -28,8 +28,6 @@
             </div>
         </div>
     </div>
-
-    <script src="{{ asset('js/website.js') }}"></script>
     <!-- just for devlopment -->
     <script async="" src="http://localhost:3000/browser-sync/browser-sync-client.js?v=2.27.7"></script>
 </body>

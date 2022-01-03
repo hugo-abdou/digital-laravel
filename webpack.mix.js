@@ -1,8 +1,6 @@
 const mix = require("laravel-mix");
 
-mix.js("resources/js/website.js", "public/js")
-
-    .js("resources/js/app.js", "public/js")
+mix.js(["resources/js/app.js", "resources/js/website.js"], "public/js")
     .react()
     .extract(["react", "axios", "react-dom", "@inertiajs/inertia-react"])
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
