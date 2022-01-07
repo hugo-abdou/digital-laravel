@@ -49,10 +49,10 @@
             <div class="flex justify-center items-center lg:w-1/2 px-9 mt-5 order-2 lg:order-1">
                 <div class="pb-10 max-w-[576px] lg:text-left">
                     <h3 class="text-p md:text-h2 font-semibold text-black">Get In Touch</h3>
-                    <span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
-                    <span class="bg-yellow-darck ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
+                    <span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
+                    <span class="bg-dark-yellow ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
 
-                    <div class="text-p-xs text-black-gray md:text-p-sm font-normal leading-7 mt-9 space-y-6">
+                    <div class="text-p-xs text-dark-gray md:text-p-sm font-normal leading-7 mt-9 space-y-6">
                         <p>
                             <b>While the online courses are self-directed, we are definitely real people behind the
                                 scenes
@@ -72,22 +72,22 @@
                             <li class="flex items-center">
                                 <img src="/assets/Vector1.png" alt="phone icon" />
                                 <div class="ml-4">
-                                    <span class="block text-sm text-black-gray">Call Anytime</span>
-                                    <span class="block text-sm font-semibold text-black-gray">+212 666 888 000</span>
+                                    <span class="block text-sm text-dark-gray">Call Anytime</span>
+                                    <span class="block text-sm font-semibold text-dark-gray">+212 666 888 000</span>
                                 </div>
                             </li>
                             <li class="flex items-center">
                                 <img src="/assets/Vector2.png" alt="phone icon" />
                                 <div class="ml-4">
-                                    <span class="block text-sm text-black-gray">Send Email</span>
-                                    <span class="block text-sm font-semibold text-black-gray">example@email.com</span>
+                                    <span class="block text-sm text-dark-gray">Send Email</span>
+                                    <span class="block text-sm font-semibold text-dark-gray">example@email.com</span>
                                 </div>
                             </li>
                             <li class="flex items-center">
                                 <img src="/assets/Vector3.png" alt="phone icon" />
                                 <div class="ml-4">
-                                    <span class="block text-sm text-black-gray">Visit Office</span>
-                                    <span class="block text-sm font-semibold text-black-gray">80 Broklyn Street</span>
+                                    <span class="block text-sm text-dark-gray">Visit Office</span>
+                                    <span class="block text-sm font-semibold text-dark-gray">80 Broklyn Street</span>
                                 </div>
                             </li>
                         </ul>

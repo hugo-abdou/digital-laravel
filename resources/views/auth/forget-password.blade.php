@@ -1,6 +1,6 @@
 <x-auth-layout title="Forget Password">
     <x-slot name="actions">
-        <div class="text-p-sm text-black-gray">
+        <div class="text-p-sm text-dark-gray">
             email verification,
         </div>
     </x-slot>

@@ -72,8 +72,8 @@
         <div class="flex justify-center items-center lg:w-1/2 mt-5 order-2 lg:order-1">
             <div class="pb-10 max-w-[576px] lg:text-left">
                 <h3 class="text-p md:text-h2 font-semibold text-black">About us</h3>
-                <span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
-                <span class="bg-yellow-darck ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
+                <span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
+                <span class="bg-dark-yellow ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
 
                 <div class="text-p-xs md:text-p-sm font-normal mt-8 leading-7">
                     <p>
@@ -111,9 +111,9 @@
             <div class="w-full lg:w-1/2 px-8 bg-gray-lv-1 flex items-center justify-center">
                 <div class="max-w-[592px] my-7 ">
                     <h3 class="font-bold text-p text-black">Full name, Founder</h3>
-                    <p class="font-bold text-p-xs mt-4 text-black-gray">PROFESSIONAL FINANCIAL PROFESSIONAL FINANCIAL
+                    <p class="font-bold text-p-xs mt-4 text-dark-gray">PROFESSIONAL FINANCIAL PROFESSIONAL FINANCIAL
                         PROFESSIONAL FINANCIAL</p>
-                    <p class="font-normal text-black-gray text-p-sm leading-7 mt-3">
+                    <p class="font-normal text-dark-gray text-p-sm leading-7 mt-3">
                         As a 20+ year financial professional, I provide customized year-round tax planning strategies to
                         clients which minimize tax liabilities for sole proprietors, LLCs, PLCs and corporations. My
                         company
@@ -123,7 +123,7 @@
                         effective
                         and fluid tax plan yields huge tax savings and drastically reduces potential tax overpayments.
                     </p>
-                    <p class="font-normal text-black-gray text-p-sm leading-7 mt-3">
+                    <p class="font-normal text-dark-gray text-p-sm leading-7 mt-3">
                         Do you have questions about a tax situation with the IRS or your state revenue office? We are
                         happy
                         to provide a free 20 minute consultation to review your issue and address your questions. .
@@ -139,9 +139,9 @@
             <div class="w-full lg:w-1/2 px-8 bg-gray-lv-1 order-2 lg:order-1 flex items-center justify-center">
                 <div class="max-w-[592px] my-7 ">
                     <h3 class="font-bold text-p text-black">Full name, Founder</h3>
-                    <p class="font-bold text-p-xs mt-4 text-black-gray">PROFESSIONAL FINANCIAL PROFESSIONAL FINANCIAL
+                    <p class="font-bold text-p-xs mt-4 text-dark-gray">PROFESSIONAL FINANCIAL PROFESSIONAL FINANCIAL
                         PROFESSIONAL FINANCIAL</p>
-                    <p class="font-normal text-black-gray text-p-sm leading-7 mt-3">
+                    <p class="font-normal text-dark-gray text-p-sm leading-7 mt-3">
                         As a 20+ year financial professional, I provide customized year-round tax planning strategies to
                         clients which minimize tax liabilities for sole proprietors, LLCs, PLCs and corporations. My
                         company
@@ -151,7 +151,7 @@
                         effective
                         and fluid tax plan yields huge tax savings and drastically reduces potential tax overpayments.
                     </p>
-                    <p class="font-normal text-black-gray text-p-sm leading-7 mt-3">
+                    <p class="font-normal text-dark-gray text-p-sm leading-7 mt-3">
                         Do you have questions about a tax situation with the IRS or your state revenue office? We are
                         happy
                         to provide a free 20 minute consultation to review your issue and address your questions. .

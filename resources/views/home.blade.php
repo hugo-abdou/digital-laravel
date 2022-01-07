@@ -25,7 +25,7 @@
 						</p>
 
 						<a href="https://calendly.com/rogersvigne/free-consult-30-minute-meeting?month=2022-01"
-							class="border inline-block bg-white font-bold text-yellow-darck text-p-sm md:text-p rounded-full px-12 py-4">Schedule
+							class="border inline-block bg-white font-bold text-dark-yellow text-p-sm md:text-p rounded-full px-12 py-4">Schedule
 							Consultation</a>
 					</div>
 				</div>
@@ -42,11 +42,11 @@
 				<img src="/assets/Rectangle68.png" alt="why hiring us image" />
 			</div>
 			<div class="flex justify-center items-center lg:w-1/2 py-28">
-				<div class="pb-10 text-black-gray">
+				<div class="pb-10 text-dark-gray">
 					<div>
 						<h3 class="text-p md:text-h2 text-black font-semibold ">Why Hiring Us</h3>
-						<span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
-						<span class="bg-yellow-darck ml-4 h-1.5 w-14 rounded-r-md inline-block"></span>
+						<span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
+						<span class="bg-dark-yellow ml-4 h-1.5 w-14 rounded-r-md inline-block"></span>
 					</div>
 					<h4 class="text-p-sm md:text-p mt-8 text-black">
 						You are accountable for knowing the information needed to
@@ -80,12 +80,12 @@
 		<div class="flex justify-center items-center lg:w-1/2 mt-5">
 			<div class="pb-10 text-center lg:text-left">
 				<h3 class="text-p md:text-h2 font-semibold text-black">What we Offer</h3>
-				<span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
-				<span class="bg-yellow-darck ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
+				<span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
+				<span class="bg-dark-yellow ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
 
 				<h4 class="text-p-sm md:text-p mt-8 font-semibold text-black">You Need A Way to Become and Remain
 					Engaged!</h4>
-				<h4 class="text-p mt-8 text-yellow-darck">How Well Do You Really Know Your Team? How Self
+				<h4 class="text-p mt-8 text-dark-yellow">How Well Do You Really Know Your Team? How Self
 					Aware Are You?
 				</h4>
 				<p class="mt-8 text-p-xs md:text-p-sm text-black">
@@ -162,8 +162,8 @@
 	<div class="container mx-auto mt-24 px-9">
 		<div>
 			<h3 class="text-p md:text-h2 font-semibold text-black">Upcoming Challenges</h3>
-			<span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
-			<span class="bg-yellow-darck ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
+			<span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
+			<span class="bg-dark-yellow ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
 		</div>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-5  pt-16 pb-44">
 			<div class="bg-white relative shadow-xl border overflow-hidden rounded-lg group max-w-[250px] mx-auto">
@@ -255,8 +255,8 @@
 		<div class="container mx-auto">
 			<div class="text-center">
 				<h3 class="text-p md:text-h2 font-semibold text-black">Testimenials</h3>
-				<span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
-				<span class="bg-yellow-darck ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
+				<span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
+				<span class="bg-dark-yellow ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
 			</div>
 			<div class="flex items-center overflow-x-auto p-5 justify-start lg:justify-center gap-4 mt-10">
 				<div class="bg-white shadow-md rounded-lg p-8 flex-shrink-0 max-w-[350px]">
@@ -305,8 +305,8 @@
 	<div class="pb-24 pt-24 relative hidden lg:block">
 		<div class="text-center">
 			<h3 class="text-p md:text-h2 font-semibold text-black">Your Singnature Program</h3>
-			<span class="bg-yellow-darck ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
-			<span class="bg-yellow-darck ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
+			<span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
+			<span class="bg-dark-yellow ml-4 h-1.5 w-12 rounded-r-md inline-block"></span>
 		</div>
 		<div class="absolute bottom-0 inset-x-0 bg-d-yellow h-1/2"></div>
 		<div class="relative flex justify-center items-center pt-10">

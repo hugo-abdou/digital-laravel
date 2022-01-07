@@ -1,13 +1,19 @@
-import { Link } from '@inertiajs/inertia-react'
-import React from 'react'
+import { Link } from "@inertiajs/inertia-react";
+import React from "react";
+import Card from "../components/Card";
+import PersonaDetails from "../components/PersonaDetails";
 
-export default function Home({user}) {
+const Home = function () {
     return (
-         <div className="flex flex-col w-full min-h-screen justify-center items-center">
-             <h1 className="text-7xl block">
-                 Name: <span className="text-d-yellow">{user.name}</span>
-             </h1>
-             <Link method='post' href='/logout' >logout</Link>
-         </div>
-    )
-}
+        <div className="grid grid-cols-3 gap-4 px-4">
+            <PersonaDetails className="row-span-2" />
+            <PersonaDetails />
+            <PersonaDetails />
+            <PersonaDetails />
+            <PersonaDetails />
+            <PersonaDetails className="col-span-2" />
+            <PersonaDetails />
+        </div>
+    );
+};
+export default Home;

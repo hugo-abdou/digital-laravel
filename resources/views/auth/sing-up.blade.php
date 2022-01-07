@@ -1,6 +1,6 @@
 <x-auth-layout title="Create An Account">
     <x-slot name="actions">
-        <div class="text-p-sm text-black-gray">
+        <div class="text-p-sm text-dark-gray">
             Already sign up,
             <a href="/login" class="underline">login</a>
         </div>
@@ -12,10 +12,10 @@
             <h4 class="text-p-sm font-semibold mt-2 mx-4">
                 Group Manager
             </h4>
-            <p class="mt-2 text-p-xs text-black-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
+            <p class="mt-2 text-p-xs text-dark-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
                 sit porttitor neque.</p>
             <a href="/register?user_type=Group Manager"
-                class="font-semibold bg-black-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
+                class="font-semibold bg-dark-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
                 up</a>
 
             <span class="absolute bottom-0 inset-x-0 bg-[#A65511] h-2 hidden group-hover:block"></span>
@@ -25,10 +25,10 @@
             <h4 class="text-p-sm font-semibold mx-4 mt-2">
                 Indivudual User
             </h4>
-            <p class="mt-2 text-p-xs text-black-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
+            <p class="mt-2 text-p-xs text-dark-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
                 sit porttitor neque.</p>
             <a href="/register?user_type=Indivudual User"
-                class="font-semibold bg-black-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
+                class="font-semibold bg-dark-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
                 up</a>
 
             <span class="absolute bottom-0 inset-x-0 bg-[#A65511] h-2 hidden group-hover:block"></span>
@@ -38,10 +38,10 @@
             <h4 class="text-p-sm font-semibold  mt-2">
                 Challenge Manager
             </h4>
-            <p class="mt-2 text-p-xs text-black-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
+            <p class="mt-2 text-p-xs text-dark-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa
                 sit porttitor neque.</p>
             <a href="/register?user_type=Challenge Manager"
-                class="font-semibold bg-black-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
+                class="font-semibold bg-dark-gray text-white text-p-xs md:text-p-sm rounded-full mt-8 px-7 py-2 inline-block">sign
                 up</a>
 
             <span class="absolute bottom-0 inset-x-0 bg-[#A65511] h-2 hidden group-hover:block"></span>
