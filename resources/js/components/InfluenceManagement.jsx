@@ -3,7 +3,7 @@ import Card from "./Card";
 
 export default function InfluenceManagement({ className }) {
     return (
-        <Card title="Persona Details:" className={className}>
+        <Card title="Influence Management" className={className}>
             <div className="flex items-center">
                 <div className="overflow-hidden rounded-full w-1/3">
                     <img

@@ -29,7 +29,7 @@ export default function OveralProgress({ className }) {
                         height="22.3585"
                         fill="#555555"
                     />
-                    {[0, 1, 2, 3, 4, 5].map((item) => {
+                    {[0, 1, 2, 3, 4, 5, 6].map((item) => {
                         return (
                             <rect
                                 key={item}

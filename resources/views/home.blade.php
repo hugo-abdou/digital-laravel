@@ -7,7 +7,7 @@
 
 		<div class="relative pt-10">
 			<!-- hero content -->
-			<div class="flex py-32 container mx-auto p-9">
+			<div class="flex py-32 max-w-7xl mx-auto p-9">
 				<!-- dashboard -->
 				<img src="/assets/Template-Flat-Presentation.png"
 					class="absolute bottom-20 w-4/6 hidden xl:flex -right-28 object-cover" />
@@ -37,7 +37,7 @@
 	<!-- why hiring us -->
 	<div class="relative  bg-gray-lv-1 px-10">
 		<div class="bg-d-yellow absolute left-0 w-full lg:w-1/4 h-1/4 lg:h-auto lg:inset-y-0"></div>
-		<div class="container mx-auto flex flex-col lg:flex-row">
+		<div class="max-w-7xl mx-auto flex flex-col lg:flex-row">
 			<div class="relative w-full lg:w-1/2 flex justify-center items-center mt-20 lg:mt-0">
 				<img src="/assets/Rectangle68.png" alt="why hiring us image" />
 			</div>
@@ -76,7 +76,7 @@
 		</div>
 	</div>
 	<!-- What we Offer -->
-	<div class="flex flex-col lg:flex-row container mx-auto px-9 mt-28">
+	<div class="flex flex-col lg:flex-row max-w-7xl mx-auto px-9 mt-28">
 		<div class="flex justify-center items-center lg:w-1/2 mt-5">
 			<div class="pb-10 text-center lg:text-left">
 				<h3 class="text-p md:text-h2 font-semibold text-black">What we Offer</h3>
@@ -159,7 +159,7 @@
 		</div>
 	</div>
 	<!-- upcoming changes -->
-	<div class="container mx-auto mt-24 px-9">
+	<div class="max-w-7xl mx-auto mt-24 px-9">
 		<div>
 			<h3 class="text-p md:text-h2 font-semibold text-black">Upcoming Challenges</h3>
 			<span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>
@@ -252,7 +252,7 @@
 	</div>
 	<!-- testimenials -->
 	<div class="bg-gray-lv-1 pb-44 pt-12">
-		<div class="container mx-auto">
+		<div class="max-w-7xl mx-auto">
 			<div class="text-center">
 				<h3 class="text-p md:text-h2 font-semibold text-black">Testimenials</h3>
 				<span class="bg-dark-yellow ml-2 h-1.5 w-6 rounded-l-md inline-block"></span>

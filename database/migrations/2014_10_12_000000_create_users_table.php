@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('gender')->nullable();
             $table->string('acount_type')->nullable();
             $table->string('group_name')->nullable();
             $table->string('country')->nullable();
@@ -27,6 +28,11 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('age')->nullable();
+            $table->string('marital_status')->nullable();
+            $table->string('ethnicity')->nullable();
+            $table->string('education_level')->nullable();
+            $table->string('occupation')->nullable();
+            $table->string('income_level')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

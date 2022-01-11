@@ -7,6 +7,7 @@ import {
     FaCog,
     FaHeartbeat,
     FaBars,
+    FaSpinner,
 } from "react-icons/fa";
 
 export default function Icon({ name }) {
@@ -17,4 +18,5 @@ export default function Icon({ name }) {
     if (name == "cog") return <FaCog />;
     if (name == "heart-beat") return <FaHeartbeat />;
     if (name == "bars") return <FaBars />;
+    if (name == "loader") return <FaSpinner />;
 }

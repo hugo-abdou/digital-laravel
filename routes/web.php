@@ -38,11 +38,3 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::view('/payment', 'payment');
-
-//////////////////////////////////// dashboard routes ///////////////////////////////
-
-Route::get('/dashboard', function () {
-    return inertia('Home', [
-        'user' => auth()->user()
-    ]);
-})->middleware('auth');

@@ -9,11 +9,11 @@ import {
 } from "@heroicons/react/solid";
 import { classNames } from "../helpers";
 
-export default function Card({ className, title, children }) {
+export default function Card({ className, title, children, MenuItems }) {
     return (
         <div
             className={classNames(
-                "bg-white rounded-md px-4 py-5 sm:px-6",
+                "bg-white rounded-md px-4 py-5 sm:px-6 min-h-[250px]",
                 className
             )}
         >
@@ -54,69 +54,7 @@ export default function Card({ className, title, children }) {
                                         static
                                         className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                     >
-                                        <div className="py-1">
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={classNames(
-                                                            active
-                                                                ? "bg-gray-100 text-gray-900"
-                                                                : "text-gray-700",
-                                                            "flex px-4 py-2 text-sm"
-                                                        )}
-                                                    >
-                                                        <StarIcon
-                                                            className="mr-3 h-5 w-5 text-gray-400"
-                                                            aria-hidden="true"
-                                                        />
-                                                        <span>
-                                                            Add to favorites
-                                                        </span>
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={classNames(
-                                                            active
-                                                                ? "bg-gray-100 text-gray-900"
-                                                                : "text-gray-700",
-                                                            "flex px-4 py-2 text-sm"
-                                                        )}
-                                                    >
-                                                        <CodeIcon
-                                                            className="mr-3 h-5 w-5 text-gray-400"
-                                                            aria-hidden="true"
-                                                        />
-                                                        <span>Embed</span>
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={classNames(
-                                                            active
-                                                                ? "bg-gray-100 text-gray-900"
-                                                                : "text-gray-700",
-                                                            "flex px-4 py-2 text-sm"
-                                                        )}
-                                                    >
-                                                        <FlagIcon
-                                                            className="mr-3 h-5 w-5 text-gray-400"
-                                                            aria-hidden="true"
-                                                        />
-                                                        <span>
-                                                            Report content
-                                                        </span>
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                        </div>
+                                        <div className="py-1">{MenuItems}</div>
                                     </Menu.Items>
                                 </Transition>
                             </>

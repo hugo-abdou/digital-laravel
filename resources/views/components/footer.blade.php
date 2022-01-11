@@ -3,7 +3,7 @@
         class="absolute h-full w-full object-cover object-top" />
     <!-- overlay -->
     <div class="absolute bg-[#000]/90 inset-0"></div>
-    <div class="relative flex flex-wrap py-10 text-white container mx-auto px-9">
+    <div class="relative flex flex-wrap py-10 text-white max-w-7xl mx-auto px-9">
         <div class="w-auto lg:w-1/4 lg:text-left">
             <span class="text-p-sm">Contact</span>
             <ul class="mt-5 space-y-3 w-full">
@@ -81,14 +81,14 @@
             <img src="/assets/Digital Self.png" alt="dijital self logo" />
         </a>
     </div>
-    <div class="relative container mx-auto px-9 text-white text-p-sm font-normal lg:hidden">
+    <div class="relative max-w-7xl mx-auto px-9 text-white text-p-sm font-normal lg:hidden">
         <p>
             <b>My company</b> dolor sit amet, consectetur adipiscing elit. A vitae in enim at diam eu vitae.consectetur
             adipiscing elit. A vitae in enim at diam eu vitae.consectetur adipiscing elit. A vitae in enim at diam eu
             vitae.consectetur adipiscing elit.
         </p>
     </div>
-    <div class="relative container mx-auto mt-14 lg:mt-0 px-9">
+    <div class="relative max-w-7xl mx-auto mt-14 lg:mt-0 px-9">
         <div class="flex justify-between py-5 text-white border-t lg:border-none">
             <span class="text-gray-400">copyright© 2021</span>
             <div class="text-white space-x-3 hidden lg:flex">

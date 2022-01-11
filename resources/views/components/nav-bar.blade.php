@@ -1,5 +1,5 @@
 <div id="nav-bar" class="fixed z-50 inset-x-0 ">
-    <div class="container px-9 mx-auto">
+    <div class="max-w-7xl px-9 mx-auto">
         <!-- navigation -->
         <div id="navigation" class="flex justify-between items-center whitespace-nowrap py-3">
             <!-- logo -->

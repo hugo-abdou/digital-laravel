@@ -18,7 +18,9 @@ export default function Layout({ children }) {
                 )}
             >
                 <NavBar toggleSideBar={toggleSideBar} />
-                <article className="py-10">{children}</article>
+                <article className="py-10 max-w-7xl mx-auto">
+                    {children}
+                </article>
             </div>
         </main>
     );

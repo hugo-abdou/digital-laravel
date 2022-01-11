@@ -7,7 +7,7 @@
         <!-- overlay -->
         <div class="absolute bg-gradient-to-r from-[#000]/70 via-[#000]/70 to-[#000]/20 inset-0"></div>
 
-        <div class="relative z-10 container mx-auto p-9">
+        <div class="relative z-10 max-w-7xl mx-auto p-9">
             <!-- hero content -->
             <div class=" relative my-24">
                 <!-- description -->
@@ -68,7 +68,7 @@
         </div>
     </div>
     <!-- about us -->
-    <div class="flex flex-col lg:flex-row container mx-auto px-9 mb-28 mt-28">
+    <div class="flex flex-col lg:flex-row max-w-7xl mx-auto px-9 mb-28 mt-28">
         <div class="flex justify-center items-center lg:w-1/2 mt-5 order-2 lg:order-1">
             <div class="pb-10 max-w-[576px] lg:text-left">
                 <h3 class="text-p md:text-h2 font-semibold text-black">About us</h3>

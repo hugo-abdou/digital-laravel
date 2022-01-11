@@ -1,7 +1,11 @@
 import React from "react";
+import { Inertia } from "@inertiajs/inertia";
+
 import { render } from "react-dom";
 import { createInertiaApp } from "@inertiajs/inertia-react";
 import AppLayout from "./layout/AppLayout";
+import { InertiaProgress } from "@inertiajs/progress";
+
 window.addEventListener("load", () => {
     const app = document.getElementById("app");
     if (app) {
@@ -20,5 +24,6 @@ window.addEventListener("load", () => {
                 el.dataset.page = "";
             },
         });
+        InertiaProgress.init();
     }
 });

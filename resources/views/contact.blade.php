@@ -6,7 +6,7 @@
         <!-- overlay -->
         <div class="absolute bg-gradient-to-r from-[#000]/70 via-[#000]/70 to-[#000]/20 inset-0"></div>
 
-        <div class="relative z-10 container mx-auto p-9">
+        <div class="relative z-10 max-w-7xl mx-auto p-9">
             <!-- hero content -->
             <div class=" relative my-24">
                 <!-- description -->
@@ -19,7 +19,7 @@
     </div>
     <!-- Get In Touch -->
     <div>
-        <div class="flex flex-col-reverse lg:flex-row container mx-auto mb-36 mt-28">
+        <div class="flex flex-col-reverse lg:flex-row max-w-7xl mx-auto mb-36 mt-28">
             <div class="flex justify-center items-center lg:px-9 lg:w-1/2 ">
                 <form method="post" action="/contact-us" class="bg-gray-lv-1 w-[560px] p-12 pt-20 space-y-8">
                     @csrf
