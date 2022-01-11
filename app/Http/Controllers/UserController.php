@@ -37,7 +37,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $data = $request->validate([
-            "name" => 'required|string|max:255',
+            "name" => 'required|string|min:5|max:255',
             "age" => 'required|integer|min:15|max:110',
             "gender" => "sometimes|string|max:255",
             "occupation" => "sometimes|string|max:255",
