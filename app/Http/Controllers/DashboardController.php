@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OveralProgress;
+use App\Models\Personality;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -16,7 +17,14 @@ class DashboardController extends Controller
                     ['user_id' =>  auth()->id()]
                 );
                 return  $overal_progress;
-            }
+            },
+            "personality_result" => function () {
+                $overal_progress = Personality::firstOrCreate(
+                    ['user_id' =>  auth()->id()],
+                    ['user_id' =>  auth()->id()]
+                );
+                return  $overal_progress;
+            },
         ]);
     }
 }
