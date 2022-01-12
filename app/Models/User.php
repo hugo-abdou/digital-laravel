@@ -52,8 +52,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(OveralProgress::class);
     }
-    public function personalities()
+    public function personality()
     {
-        return $this->hasOne(OveralProgress::class);
+        return $this->hasOne(Personality::class);
     }
 }

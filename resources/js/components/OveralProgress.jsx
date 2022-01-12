@@ -44,13 +44,13 @@ function InputFeild(props) {
     if (!props.editable)
         return (
             <div className="ml-5 w-1/3 text-center font-bold text-lg text-dark-gray">
-                <span className="block">{props.value}%</span>
+                <span className="block">{props.value || 0}%</span>
                 <span>{props.name}</span>
             </div>
         );
     return (
         <div className="ml-5 font-bold w-1/3 text-center text-lg text-dark-gray">
-            <span className="">{props.name}</span>
+            <span>{props.name}</span>
             <input
                 type={props.type}
                 onChange={props.handelChange}

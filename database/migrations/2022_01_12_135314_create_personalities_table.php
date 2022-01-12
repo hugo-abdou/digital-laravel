@@ -22,7 +22,7 @@ class CreatePersonalitiesTable extends Migration
             $table->string('s')->default(0);
             $table->string('t')->default(0);
             $table->string('p')->default(0);
-            $table->string('l')->default(0);
+            $table->string('e')->default(0);
             $table->string('j')->default(0);
             $table->timestamps();
         });

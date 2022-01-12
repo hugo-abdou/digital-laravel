@@ -8,33 +8,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, User $user)
     {
         $data = $request->validate([
@@ -50,13 +23,7 @@ class UserController extends Controller
         $user->update($data);
         return back(303);
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update_overal_progress(Request $request, OveralProgress $overal_progress)
     {
         $data = $request->validate([
@@ -67,14 +34,20 @@ class UserController extends Controller
         return back(303);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function update_personality_result(User $user, Request $request)
     {
-        //
+        $data = $request->validate([
+            "i" => "required|numeric|between:0,100",
+            "n" => "required|numeric|between:0,100",
+            "f" => "required|numeric|between:0,100",
+            "s" => "required|numeric|between:0,100",
+            "t" => "required|numeric|between:0,100",
+            "p" => "required|numeric|between:0,100",
+            "e" => "required|numeric|between:0,100",
+            "j" => "required|numeric|between:0,100",
+        ]);
+        $user->personality->update($data);
+        return back(303);
     }
 }
