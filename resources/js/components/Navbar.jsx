@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { classNames } from "../helpers";
-import { usePage } from "@inertiajs/inertia-react";
+import { Link, usePage } from "@inertiajs/inertia-react";
 
 const navigation = [
     { name: "Upcoming Challenges", href: "/" },
@@ -75,23 +75,22 @@ export default function NavBar(props) {
                                     leaveTo="transform opacity-0 scale-95"
                                 >
                                     <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                        {userNavigation.map((item) => (
-                                            <Menu.Item key={item.name}>
-                                                {({ active }) => (
-                                                    <a
-                                                        href={item.href}
-                                                        className={classNames(
-                                                            active
-                                                                ? "bg-gray-100"
-                                                                : "",
-                                                            "block px-4 py-2 text-sm text-gray-700"
-                                                        )}
-                                                    >
-                                                        {item.name}
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                        ))}
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <Link
+                                                    method="post"
+                                                    href="/logout"
+                                                    className={classNames(
+                                                        active
+                                                            ? "bg-gray-100"
+                                                            : "",
+                                                        "block px-4 py-2 text-sm text-gray-700"
+                                                    )}
+                                                >
+                                                    logout
+                                                </Link>
+                                            )}
+                                        </Menu.Item>
                                     </Menu.Items>
                                 </Transition>
                             </Menu>
