@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OveralProgress;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -47,6 +48,22 @@ class UserController extends Controller
             "education_level" => "sometimes|string|max:255",
         ]);
         $user->update($data);
+        return back(303);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update_overal_progress(Request $request, OveralProgress $overal_progress)
+    {
+        $data = $request->validate([
+            "goals" => "required|numeric|between:0,100",
+            "wellness" => "required|numeric|between:0,100",
+        ]);
+        $overal_progress->update($data);
         return back(303);
     }
 
