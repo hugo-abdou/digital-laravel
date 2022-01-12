@@ -4,10 +4,12 @@ import NavBar from "../components/NavBar";
 import { classNames } from "../helpers";
 
 export default function Layout({ children }) {
-    const [sideBarOpen, setSideBarOpen] = useState(true);
+    const [sideBarOpen, setSideBarOpen] = useState(false);
+
     function toggleSideBar() {
         setSideBarOpen(!sideBarOpen);
     }
+
     return (
         <main className="flex">
             <SideBar isOpen={sideBarOpen} />

@@ -1,17 +1,12 @@
 import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Menu, Transition } from "@headlessui/react";
+import { MenuIcon } from "@heroicons/react/outline";
 import { classNames } from "../helpers";
 import { Link, usePage } from "@inertiajs/inertia-react";
 
 const navigation = [
     { name: "Upcoming Challenges", href: "/" },
     { name: "Forum Area", href: "/" },
-];
-const userNavigation = [
-    { name: "Your Profile", href: "#" },
-    { name: "Settings", href: "#" },
-    { name: "Sign out", href: "#" },
 ];
 
 export default function NavBar(props) {
@@ -78,13 +73,12 @@ export default function NavBar(props) {
                                         <Menu.Item>
                                             {({ active }) => (
                                                 <Link
+                                                    as="button"
                                                     method="post"
                                                     href="/logout"
                                                     className={classNames(
-                                                        active
-                                                            ? "bg-gray-100"
-                                                            : "",
-                                                        "block px-4 py-2 text-sm text-gray-700"
+                                                        active && "bg-gray-100",
+                                                        "block px-4 py-2 text-left w-full text-sm text-gray-700"
                                                     )}
                                                 >
                                                     logout

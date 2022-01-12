@@ -8,9 +8,9 @@ mix.webpackConfig({
 // react
 mix.js(["resources/js/app.js", "resources/js/website.js"], "public/js")
     .react()
-    .sourceMaps()
     .extract(["react", "axios", "react-dom", "@inertiajs/inertia-react"])
-    .version();
+    .version()
+    .sourceMaps();
 // tailwindcss
 mix.postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
 
