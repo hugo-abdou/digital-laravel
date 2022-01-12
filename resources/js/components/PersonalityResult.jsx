@@ -1,7 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { PencilAltIcon } from "@heroicons/react/solid";
 import { useForm, usePage } from "@inertiajs/inertia-react";
-import { isObject, isPlainObject } from "lodash";
 import React, { Fragment, useState } from "react";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";

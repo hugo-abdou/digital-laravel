@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/stubs
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml

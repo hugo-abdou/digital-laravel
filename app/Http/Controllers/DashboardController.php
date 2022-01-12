@@ -19,11 +19,9 @@ class DashboardController extends Controller
                 return  $overal_progress;
             },
             "personality_result" => function () {
-                $overal_progress = Personality::firstOrCreate(
-                    ['user_id' =>  auth()->id()],
-                    ['user_id' =>  auth()->id()]
-                );
-                return  $overal_progress;
+                // $data = auth()->user()->personalities;
+
+                return [];
             },
         ]);
     }
