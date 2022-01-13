@@ -50,11 +50,13 @@ class UserController extends Controller
             "j" => "sometimes|numeric|between:0,100",
         ]);
         user()->indicators->each(function ($indicator) use ($data) {
-            user()->indicators()->syncWithoutDetaching([
-                $indicator->id => [
-                    'pourcentage' => $data[$indicator->name]
-                ]
-            ]);
+            if (isset($data[$indicator->name])) {
+                user()->indicators()->syncWithoutDetaching([
+                    $indicator->id => [
+                        'pourcentage' => $data[$indicator->name]
+                    ]
+                ]);
+            }
         });
 
         return back(303);
@@ -71,8 +73,6 @@ class UserController extends Controller
         $newId = Indicator::where('name',  $data['new'])->first()->id;
 
         $indicator_user = user()->indicator_user()->where('indicator_id', $curentId)->first();
-
-        // dd($newId, $curentId);
 
         $indicator_user->update(['indicator_id' => $newId]);
 

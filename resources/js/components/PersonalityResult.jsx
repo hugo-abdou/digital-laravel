@@ -60,7 +60,6 @@ function Progressbar({ name, value, color, lables, userId, editable }) {
                                                                 },
                                                                 {
                                                                     preserveScroll: true,
-                                                                    preserveState: true,
                                                                 }
                                                             )
                                                         }
