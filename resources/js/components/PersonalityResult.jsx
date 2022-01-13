@@ -1,33 +1,32 @@
 import { Menu, Transition } from "@headlessui/react";
 import { PencilAltIcon } from "@heroicons/react/solid";
+import { Inertia } from "@inertiajs/inertia";
 import { useForm, usePage } from "@inertiajs/inertia-react";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { classNames } from "../helpers";
 import Card from "./Card";
 import Icon from "./Icon";
 
-function Progressbar({ lables, value, color }) {
-    const [selectedLable, setLable] = useState(lables[0] || "");
+function Progressbar({ name, value, color, lables, userId }) {
     return (
         <div className="p-1 flex flex-col items-center">
             <CircularProgressbar
                 className="!w-14 mx-auto"
-                value={value[selectedLable] || 0}
-                text={`${value[selectedLable] || 0}%`}
+                value={value || 0}
+                text={`${value || 0}%`}
                 strokeWidth={10}
                 styles={buildStyles({
-                    pathColor: color[selectedLable],
+                    pathColor: color,
                 })}
             />
-
             <Menu as="div" className="relative z-30">
                 {({ open }) => (
                     <>
                         <Menu.Button>
                             <span className="text-center capitalize font-semibold text-2xl text-black block mt-2">
-                                {selectedLable}
+                                {name}
                             </span>
                         </Menu.Button>
 
@@ -51,7 +50,17 @@ function Progressbar({ lables, value, color }) {
                                             {({ active }) => (
                                                 <button
                                                     onClick={() =>
-                                                        setLable(lable)
+                                                        Inertia.put(
+                                                            `/change_personality/${userId}`,
+                                                            {
+                                                                curent: name,
+                                                                new: lable,
+                                                            },
+                                                            {
+                                                                preserveScroll: true,
+                                                                preserveState: true,
+                                                            }
+                                                        )
                                                     }
                                                     className={classNames(
                                                         active
@@ -74,11 +83,6 @@ function Progressbar({ lables, value, color }) {
         </div>
     );
 }
-Progressbar.defaultProps = {
-    lables: [],
-    color: {},
-    value: 10,
-};
 
 function MenuItems(props) {
     return (
@@ -118,12 +122,36 @@ function Label(props) {
         </label>
     );
 }
+const colors = {
+    e: "#0097fe",
+    i: "#014b7c",
+    t: "#ff120c",
+    f: "#e149d9",
+    s: "#0dcc53",
+    n: "#814be7",
+    j: "#ffe51c",
+    p: "#ce5c0a",
+};
+
+function lableValues(key) {
+    if (key == "e" || key == "i") return ["e", "i"];
+    if (key == "s" || key == "n") return ["s", "n"];
+    if (key == "t" || key == "f") return ["t", "f"];
+    if (key == "j" || key == "p") return ["j", "p"];
+}
 
 export default function PersonalityResult() {
     const { personality_result, auth } = usePage().props;
     const [editable, setEditable] = useState(false);
-    const { data, setData, put, processing, errors } =
-        useForm(personality_result);
+    function initialForm() {
+        let obj = {};
+        personality_result.data.map(({ name, pourcentage }) => {
+            obj[name] = pourcentage;
+        });
+        return obj;
+    }
+
+    const { data, setData, put, processing, errors } = useForm(initialForm);
 
     function handelSubmit() {
         put(`/personality_result/${auth.user.id}/update`, {
@@ -149,86 +177,34 @@ export default function PersonalityResult() {
                 }
             >
                 <div className="flex justify-around h-full items-center mt-6">
-                    <Progressbar
-                        color={{ e: "#0097fe", i: "#014b7c" }}
-                        lables={["e", "i"]}
-                        value={personality_result}
-                    />
-                    <Progressbar
-                        color={{ s: "#0dcc53", n: "#814be7" }}
-                        lables={["s", "n"]}
-                        value={personality_result}
-                    />
-                    <Progressbar
-                        color={{ t: "#ff120c", f: "#e149d9" }}
-                        lables={["t", "f"]}
-                        value={personality_result}
-                    />
-                    <Progressbar
-                        color={{ j: "#ffe51c", p: "#ce5c0a" }}
-                        lables={["j", "p"]}
-                        value={personality_result}
-                    />
+                    {personality_result.data.map(({ name, pourcentage }) => {
+                        return (
+                            <Progressbar
+                                userId={auth.user.id}
+                                color={colors[name]}
+                                key={name}
+                                name={name}
+                                lables={lableValues(name)}
+                                value={pourcentage}
+                            />
+                        );
+                    })}
                 </div>
                 {editable && (
                     <>
                         <div className="grid gap-4 grid-cols-2 h-full mt-6">
-                            <Label
-                                value={data["e"] || 0}
-                                label="E :"
-                                handelChange={(e) =>
-                                    setData("e", e.target.value)
-                                }
-                            />
-                            <Label
-                                value={data["s"] || 0}
-                                label="s :"
-                                handelChange={(e) =>
-                                    setData("s", e.target.value)
-                                }
-                            />
-                            <Label
-                                value={data["i"] || 0}
-                                label="i :"
-                                handelChange={(e) =>
-                                    setData("i", e.target.value)
-                                }
-                            />
-                            <Label
-                                value={data["n"] || 0}
-                                label="n :"
-                                handelChange={(e) =>
-                                    setData("n", e.target.value)
-                                }
-                            />
-                            <Label
-                                value={data["t"] || 0}
-                                label="t :"
-                                handelChange={(e) =>
-                                    setData("t", e.target.value)
-                                }
-                            />
-                            <Label
-                                value={data["j"] || 0}
-                                label="j :"
-                                handelChange={(e) =>
-                                    setData("j", e.target.value)
-                                }
-                            />
-                            <Label
-                                value={data["f"] || 0}
-                                label="f :"
-                                handelChange={(e) =>
-                                    setData("f", e.target.value)
-                                }
-                            />
-                            <Label
-                                value={data["p"] || 0}
-                                label="p :"
-                                handelChange={(e) =>
-                                    setData("p", e.target.value)
-                                }
-                            />
+                            {personality_result.data.map(({ name }) => {
+                                return (
+                                    <Label
+                                        key={name}
+                                        value={data[name] || 0}
+                                        label={`${name} :`}
+                                        handelChange={(e) =>
+                                            setData(name, e.target.value)
+                                        }
+                                    />
+                                );
+                            })}
                         </div>
                         {Object.keys(errors).length ? (
                             <div className="text-center mt-2">

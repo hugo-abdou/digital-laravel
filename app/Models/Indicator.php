@@ -14,4 +14,9 @@ class Indicator extends Model
      * @var array<int, string>
      */
     protected $guarded = [];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Indicator;
+use App\Models\IndicatorUser;
 use App\Models\OveralProgress;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -38,16 +40,42 @@ class UserController extends Controller
     public function update_personality_result(User $user, Request $request)
     {
         $data = $request->validate([
-            "i" => "required|numeric|between:0,100",
-            "n" => "required|numeric|between:0,100",
-            "f" => "required|numeric|between:0,100",
-            "s" => "required|numeric|between:0,100",
-            "t" => "required|numeric|between:0,100",
-            "p" => "required|numeric|between:0,100",
-            "e" => "required|numeric|between:0,100",
-            "j" => "required|numeric|between:0,100",
+            "i" => "sometimes|numeric|between:0,100",
+            "n" => "sometimes|numeric|between:0,100",
+            "f" => "sometimes|numeric|between:0,100",
+            "s" => "sometimes|numeric|between:0,100",
+            "t" => "sometimes|numeric|between:0,100",
+            "p" => "sometimes|numeric|between:0,100",
+            "e" => "sometimes|numeric|between:0,100",
+            "j" => "sometimes|numeric|between:0,100",
         ]);
-        $user->personality->update($data);
+        user()->indicators->each(function ($indicator) use ($data) {
+            user()->indicators()->syncWithoutDetaching([
+                $indicator->id => [
+                    'pourcentage' => $data[$indicator->name]
+                ]
+            ]);
+        });
+
+        return back(303);
+    }
+
+    public function change_personality(User $user, Request $request)
+    {
+        $data = $request->validate([
+            "curent" => "required|string",
+            "new" => "required|string",
+        ]);
+
+        $curentId = Indicator::where('name',  $data['curent'])->first()->id;
+        $newId = Indicator::where('name',  $data['new'])->first()->id;
+
+        $indicator_user = user()->indicator_user()->where('indicator_id', $curentId)->first();
+
+        // dd($newId, $curentId);
+
+        $indicator_user->update(['indicator_id' => $newId]);
+
         return back(303);
     }
 }
