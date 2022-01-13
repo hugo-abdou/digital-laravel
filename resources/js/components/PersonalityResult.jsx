@@ -9,7 +9,7 @@ import { classNames } from "../helpers";
 import Card from "./Card";
 import Icon from "./Icon";
 
-function Progressbar({ name, value, color, lables, userId }) {
+function Progressbar({ name, value, color, lables, userId, editable }) {
     return (
         <div className="p-1 flex flex-col items-center">
             <CircularProgressbar
@@ -21,65 +21,72 @@ function Progressbar({ name, value, color, lables, userId }) {
                     pathColor: color,
                 })}
             />
-            <Menu as="div" className="relative z-30">
-                {({ open }) => (
-                    <>
-                        <Menu.Button>
-                            <span className="text-center capitalize font-semibold text-2xl text-black block mt-2">
-                                {name}
-                            </span>
-                        </Menu.Button>
+            {!editable ? (
+                <Menu as="div" className="relative z-30">
+                    {({ open }) => (
+                        <>
+                            <Menu.Button>
+                                <span className="text-center capitalize font-semibold text-2xl text-black block mt-2">
+                                    {name}
+                                </span>
+                            </Menu.Button>
 
-                        <Transition
-                            show={open}
-                            as={Fragment}
-                            enter="transition ease-out duration-100"
-                            enterFrom="transform opacity-0 scale-95"
-                            enterTo="transform opacity-100 scale-100"
-                            leave="transition ease-in duration-75"
-                            leaveFrom="transform opacity-100 scale-100"
-                            leaveTo="transform opacity-0 scale-95"
-                        >
-                            <Menu.Items
-                                static
-                                className="top-0 absolute -right-3 mt-3 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            <Transition
+                                show={open}
+                                as={Fragment}
+                                enter="transition ease-out duration-100"
+                                enterFrom="transform opacity-0 scale-95"
+                                enterTo="transform opacity-100 scale-100"
+                                leave="transition ease-in duration-75"
+                                leaveFrom="transform opacity-100 scale-100"
+                                leaveTo="transform opacity-0 scale-95"
                             >
-                                {lables.map((lable) => {
-                                    return (
-                                        <Menu.Item key={lable}>
-                                            {({ active }) => (
-                                                <button
-                                                    onClick={() =>
-                                                        Inertia.put(
-                                                            `/change_personality/${userId}`,
-                                                            {
-                                                                curent: name,
-                                                                new: lable,
-                                                            },
-                                                            {
-                                                                preserveScroll: true,
-                                                                preserveState: true,
-                                                            }
-                                                        )
-                                                    }
-                                                    className={classNames(
-                                                        active
-                                                            ? "bg-gray-100 text-gray-900"
-                                                            : "text-gray-700",
-                                                        "flex px-4 py-2 text-center capitalize font-semibold text-2xl text-black w-full"
-                                                    )}
-                                                >
-                                                    <span>{lable}</span>
-                                                </button>
-                                            )}
-                                        </Menu.Item>
-                                    );
-                                })}
-                            </Menu.Items>
-                        </Transition>
-                    </>
-                )}
-            </Menu>
+                                <Menu.Items
+                                    static
+                                    className="top-0 absolute -right-3 mt-3 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                >
+                                    {lables.map((lable) => {
+                                        return (
+                                            <Menu.Item key={lable}>
+                                                {({ active }) => (
+                                                    <button
+                                                        onClick={() =>
+                                                            name !== lable &&
+                                                            Inertia.put(
+                                                                `/change_personality/${userId}`,
+                                                                {
+                                                                    curent: name,
+                                                                    new: lable,
+                                                                },
+                                                                {
+                                                                    preserveScroll: true,
+                                                                    preserveState: true,
+                                                                }
+                                                            )
+                                                        }
+                                                        className={classNames(
+                                                            active
+                                                                ? "bg-gray-100 text-gray-900"
+                                                                : "text-gray-700",
+                                                            "flex px-4 py-2 text-center capitalize font-semibold text-2xl text-black w-full"
+                                                        )}
+                                                    >
+                                                        <span>{lable}</span>
+                                                    </button>
+                                                )}
+                                            </Menu.Item>
+                                        );
+                                    })}
+                                </Menu.Items>
+                            </Transition>
+                        </>
+                    )}
+                </Menu>
+            ) : (
+                <span className="text-center capitalize font-semibold text-2xl text-black block mt-2">
+                    {name}
+                </span>
+            )}
         </div>
     );
 }
@@ -180,6 +187,7 @@ export default function PersonalityResult() {
                     {personality_result.data.map(({ name, pourcentage }) => {
                         return (
                             <Progressbar
+                                editable={editable}
                                 userId={auth.user.id}
                                 color={colors[name]}
                                 key={name}
