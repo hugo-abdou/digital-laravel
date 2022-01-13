@@ -778,6 +778,9 @@ select{
 .min-h-\[250px\]{
   min-height: 250px;
 }
+.min-h-0{
+  min-height: 0px;
+}
 .min-h-\[calc\(100vh-339px\)\]{
   min-height: calc(100vh - 339px);
 }
@@ -1081,6 +1084,9 @@ select{
 }
 .border-t{
   border-top-width: 1px;
+}
+.border-none{
+  border-style: none;
 }
 .border-white{
   --tw-border-opacity: 1;

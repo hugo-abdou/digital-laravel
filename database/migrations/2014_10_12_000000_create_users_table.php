@@ -33,6 +33,7 @@ class CreateUsersTable extends Migration
             $table->string('education_level')->nullable();
             $table->string('occupation')->nullable();
             $table->string('income_level')->nullable();
+            $table->longText('background')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
