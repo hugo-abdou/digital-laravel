@@ -70,7 +70,7 @@ export default function PersonalityBackground() {
                     <textarea
                         onKeyUp={handleKeyUp}
                         style={{ height: textareaHeight }}
-                        className="w-full border-none"
+                        className="w-full border-none bg-gray-100 rounded-md shadow-inner"
                         defaultValue={data.background}
                     />
                 ) : (

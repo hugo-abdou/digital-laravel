@@ -18,13 +18,13 @@ export default function SideBar({ isOpen }) {
                 <nav className="h-[calc(100vh-60px)] mt-2 flex flex-col justify-center">
                     <ul className="mb-20 w-64">
                         <SideBarLink
-                            href="/dashboard"
+                            href="/persona-dashboard"
                             name="Persona Dashboard"
                             icon="user-circle"
                             isOpen={isOpen}
                         />
                         <SideBarLink
-                            href="/"
+                            href="/personality-profile"
                             name="Personality Profile"
                             icon="clipboard-list"
                             isOpen={isOpen}

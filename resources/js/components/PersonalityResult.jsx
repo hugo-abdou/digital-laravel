@@ -146,7 +146,7 @@ function lableValues(key) {
     if (key == "j" || key == "p") return ["j", "p"];
 }
 
-export default function PersonalityResult() {
+export default function PersonalityResult({ title }) {
     const { personality_result, auth } = usePage().props;
     const [editable, setEditable] = useState(false);
     function initialForm() {
@@ -172,7 +172,7 @@ export default function PersonalityResult() {
         <Card
             className={editable ? "row-span-2 " : ""}
             MenuItems={<MenuItems handelClick={() => setEditable(true)} />}
-            title="Personality Result"
+            title={title}
         >
             <p className="text-sm text-dark-gray">
                 Intrevorted Intuitive Feeling Perceiver
