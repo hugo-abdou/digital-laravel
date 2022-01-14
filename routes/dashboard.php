@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -8,8 +9,11 @@ use Illuminate\Support\Facades\Route;
 //////////////////////////////////// dashboard routes ///////////////////////////////
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    // pages
+    Route::get('/persona-dashboard', DashboardController::class);
+    Route::get('/personality-profile', ProfileController::class);
 
+    // action
     Route::put('/users/{user}/update', [UserController::class, 'update']);
     Route::put('/overal_progress/{overal_progress}/update', [UserController::class, 'update_overal_progress']);
     Route::put('/personality_result/{user}/update', [UserController::class, 'update_personality_result']);
