@@ -21,7 +21,7 @@ class UserController extends Controller
             "marital_status" => "sometimes|string|max:255",
             "income_level" => "sometimes|string|max:255",
             "education_level" => "sometimes|string|max:255",
-            "background" => "sometimes|string|max:255",
+            "background" => "sometimes|string",
         ]);
         $user->update($data);
         return back(303);

@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\PersonalityResource;
+use App\Http\Resources\IndicatorResource;
 use App\Models\OveralProgress;
 use App\Models\Personality;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public  function index()
+    public  function __invoke()
     {
-        return inertia('Home', [
+        return inertia('PersonaDashboard', [
             "overal_progress" => function () {
                 $overal_progress = OveralProgress::firstOrCreate(
                     ['user_id' =>  auth()->id()],
@@ -27,8 +27,9 @@ class DashboardController extends Controller
 
                 $personality = auth()->user()->indicators->all();
 
-                return PersonalityResource::collection($personality);
+                return IndicatorResource::collection($personality);
             },
+            "personality_definition" => fn () => user()->personality->only('name', 'definition'),
         ]);
     }
 }
