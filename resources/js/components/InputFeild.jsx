@@ -1,18 +1,22 @@
 import React from "react";
+import { classNames } from "../helpers";
 
 export default function InputFeild(props) {
-    if (!props.editable) return <span className="ml-2 ">{props.value}</span>;
     return (
-        <>
+        <label className="flex items-center">
+            <span className="mr-1 w-10 capitalize font-semibold">
+                {props.label}
+            </span>
             <input
-                type={props.type}
+                max={100}
+                type="number"
                 onChange={props.handelChange}
                 value={props.value || ""}
-                className="py-0 mt-2 w-full rounded border-gray-400"
+                className={classNames(
+                    "w-full py-0 border-gray-400 rounded-md",
+                    props.className
+                )}
             />
-            {props.error && (
-                <span className="text-red-400 text-xs">{props.error}</span>
-            )}
-        </>
+        </label>
     );
 }

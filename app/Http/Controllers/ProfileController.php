@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\IndicatorResource;
+use App\Models\Disc;
 use App\Models\Indicator;
 use App\Models\OveralProgress;
 use Exception;
@@ -37,6 +38,12 @@ class ProfileController extends Controller
                 } catch (\Throwable $th) {
                     throw new Exception("Indicator Not Found", 1);
                 }
+            },
+            'discs' => function () {
+                if (!user()->discs()->count()) {
+                    Disc::createDefaultDiscs();
+                }
+                return user()->discs;
             }
         ]);
     }

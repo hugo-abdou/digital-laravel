@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePersonalitiesTable extends Migration
 {
+
+    //Personality  |        |        |        |       |
+    // INFP         | Text 1 | text 2 | Text 3 |text 4 | text 5
+    // ENFP         | Text 1 | text 2 | Text 3 |text 4 | text 5
+
     /**
      * Run the migrations.
      *
@@ -15,9 +20,12 @@ class CreatePersonalitiesTable extends Migration
     {
         Schema::create('personalities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
             $table->string('name');
-            $table->string('pourcentage')->default(0);
+            $table->text('definition');
+            $table->text('workplace_attributes');
+            $table->text('interpersonal_attributes');
+            $table->text('strength');
+            $table->text('weaknesses');
             $table->timestamps();
         });
     }

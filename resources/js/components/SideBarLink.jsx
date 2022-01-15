@@ -7,7 +7,7 @@ export default function SideBarLink({ href, name, icon, isOpen }) {
     return (
         <li
             className={
-                url === href
+                url.includes(href)
                     ? "bg-dark-blue text-d-yellow"
                     : "text-white hover:bg-dark-blue/50 group"
             }

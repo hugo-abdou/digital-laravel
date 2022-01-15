@@ -54,7 +54,7 @@ class User extends Authenticatable
     }
     public function personality()
     {
-        return $this->hasOne(Personality::class);
+        return $this->belongsTo(Personality::class);
     }
 
     public function indicators()
@@ -64,5 +64,9 @@ class User extends Authenticatable
     public function indicator_user()
     {
         return $this->hasMany(IndicatorUser::class);
+    }
+    public function discs()
+    {
+        return $this->hasMany(Disc::class);
     }
 }

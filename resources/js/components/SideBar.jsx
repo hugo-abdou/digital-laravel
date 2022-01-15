@@ -30,7 +30,7 @@ export default function SideBar({ isOpen }) {
                             isOpen={isOpen}
                         />
                         <SideBarLink
-                            href="/"
+                            href="/development-progress"
                             name="Development Progress"
                             icon="chart-bar"
                             isOpen={isOpen}

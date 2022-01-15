@@ -8,12 +8,18 @@ export default function PersonalityDefinition({ title, columName }) {
     return (
         <Card title={title}>
             <div className="text-sm text-dark-gray space-y-3">
-                <p>
+                {personality_definition ? (
+                    <p>
+                        <span className="uppercase mr-1 font-bold">
+                            {personality_definition.name}
+                        </span>
+                        {personality_definition[columName]}
+                    </p>
+                ) : (
                     <span className="uppercase mr-1 font-bold">
-                        {personality_definition.name}
+                        No Data Found
                     </span>
-                    {personality_definition[columName]}
-                </p>
+                )}
             </div>
         </Card>
     );

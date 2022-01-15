@@ -11,7 +11,7 @@ export default function Indicators() {
     const links = ["e", "n", "f", "s", "t", "p", "i", "j", "d", "i", "s", "k"];
     return (
         <Card title="Indicators">
-            <div className="flex items-start min-h-[150px]">
+            <div className="flex items-start">
                 <div className="w-1/3">
                     <span className="bg-[#ED7D31] text-white text-center leading-10 uppercase w-10 h-10 block font-bold text-lg rounded-full">
                         {indicator.name}

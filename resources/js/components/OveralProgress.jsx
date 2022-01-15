@@ -2,8 +2,8 @@ import { useForm, usePage } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import Card from "./Card";
 import { Menu } from "@headlessui/react";
-import { PencilAltIcon } from "@heroicons/react/solid";
 import { classNames } from "../helpers";
+import { PencilAltIcon } from "@heroicons/react/solid";
 import Icon from "./Icon";
 
 function LoopSvg(props) {

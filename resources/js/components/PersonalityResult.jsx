@@ -8,6 +8,7 @@ import "react-circular-progressbar/dist/styles.css";
 import { classNames } from "../helpers";
 import Card from "./Card";
 import Icon from "./Icon";
+import InputFeild from "./InputFeild";
 
 function Progressbar({ name, value, color, lables, userId, editable }) {
     return (
@@ -111,23 +112,6 @@ function MenuItems(props) {
         </Menu.Item>
     );
 }
-
-function Label(props) {
-    return (
-        <label className="flex items-center">
-            <span className="mr-1 w-10 capitalize font-semibold">
-                {props.label}
-            </span>
-            <input
-                max={100}
-                type="number"
-                onChange={props.handelChange}
-                value={props.value || ""}
-                className="w-full py-0 border-gray-400 rounded-md"
-            />
-        </label>
-    );
-}
 const colors = {
     e: "#0097fe",
     i: "#014b7c",
@@ -202,7 +186,7 @@ export default function PersonalityResult({ title }) {
                         <div className="grid gap-4 grid-cols-2 h-full mt-6">
                             {personality_result.data.map(({ name }) => {
                                 return (
-                                    <Label
+                                    <InputFeild
                                         key={name}
                                         value={data[name] || 0}
                                         label={`${name} :`}

@@ -5,8 +5,24 @@ import { Menu } from "@headlessui/react";
 import { classNames } from "../helpers";
 import Card from "./Card";
 import Icon from "./Icon";
-import InputFeild from "./InputFeild";
 import SelectFeild from "./SelectFeild";
+
+function InputFeild(props) {
+    if (!props.editable) return <span className="ml-2 ">{props.value}</span>;
+    return (
+        <>
+            <input
+                type={props.type}
+                onChange={props.handelChange}
+                value={props.value || ""}
+                className="py-0 mt-2 w-full rounded border-gray-400"
+            />
+            {props.error && (
+                <span className="text-red-400 text-xs">{props.error}</span>
+            )}
+        </>
+    );
+}
 
 function MenuItems(props) {
     return (

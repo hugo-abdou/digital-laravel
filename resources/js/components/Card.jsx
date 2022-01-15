@@ -13,7 +13,7 @@ export default function Card({ className, title, children, MenuItems }) {
     return (
         <div
             className={classNames(
-                "bg-white rounded-md px-4 py-5 sm:px-6 min-h-[250px]",
+                "bg-white rounded-md px-4 py-5 sm:px-6",
                 className
             )}
         >

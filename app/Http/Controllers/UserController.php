@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Disc;
 use App\Models\Indicator;
 use App\Models\IndicatorUser;
 use App\Models\OveralProgress;
@@ -77,6 +78,23 @@ class UserController extends Controller
 
         $indicator_user->update(['indicator_id' => $newId]);
 
+        return back(303);
+    }
+
+    public function update_discs(Request $request)
+    {
+        $data = $request->validate([
+            'discs' => 'required|array'
+        ]);
+        collect($data['discs'])->each(function ($disc) {
+            $model = Disc::where('id', $disc['id'])->first();
+
+            $model->update([
+                'd' => $disc['d'],
+                'di' => $disc['di'],
+                'dc' => $disc['dc'],
+            ]);
+        });
         return back(303);
     }
 }
