@@ -59,11 +59,16 @@ class DatabaseSeeder extends Seeder
 
         Personality::create([
             'name' => 'ESTJ',
-            "definition" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non impedit pariatur necessitatibus fuga repudiandae ea? Enim ea expedita optio molestiae inventore repellat obcaecati quia culpa! Autem, sit!',
-            "weaknesses" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non impedit pariatur necessitatibus fuga repudiandae ea? Enim ea expedita optio molestiae inventore repellat obcaecati quia culpa! Autem, sit!',
-            "strength" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non impedit pariatur necessitatibus fuga repudiandae ea? Enim ea expedita optio molestiae inventore repellat obcaecati quia culpa! Autem, sit!',
-            "interpersonal_attributes" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non impedit pariatur necessitatibus fuga repudiandae ea? Enim ea expedita optio molestiae inventore repellat obcaecati quia culpa! Autem, sit!',
-            "workplace_attributes" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non impedit pariatur necessitatibus fuga repudiandae ea? Enim ea expedita optio molestiae inventore repellat obcaecati quia culpa! Autem, sit!'
+
+            "definition" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non ',
+
+            "weaknesses" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non',
+
+            "strength" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non ',
+
+            "interpersonal_attributes" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non ',
+
+            "workplace_attributes" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non '
         ]);
     }
 }

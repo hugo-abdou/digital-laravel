@@ -98,7 +98,7 @@ export default function Disc() {
             title="Disc"
             className={classNames("col-span-2", editable && "row-span-2")}
         >
-            <div className="flex justify-around">
+            <div className="flex justify-around pb-5">
                 {discs.map((disc) => {
                     return <Pourcentage disc={disc} key={disc.id} />;
                 })}
