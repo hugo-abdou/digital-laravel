@@ -595,6 +595,10 @@ select{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .mx-4{
   margin-left: 1rem;
   margin-right: 1rem;
@@ -602,10 +606,6 @@ select{
 .my-14{
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
-}
-.my-4{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 .mt-4{
   margin-top: 1rem;
@@ -855,6 +855,9 @@ select{
 }
 .\!w-14{
   width: 3.5rem !important;
+}
+.w-5\/6{
+  width: 83.333333%;
 }
 .w-64{
   width: 16rem;
@@ -1112,6 +1115,9 @@ select{
 }
 .border{
   border-width: 1px;
+}
+.border-b-2{
+  border-bottom-width: 2px;
 }
 .border-t{
   border-top-width: 1px;
@@ -1541,6 +1547,10 @@ select{
 .text-red-400{
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+.text-green-400{
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
 }
 .text-red-500{
   --tw-text-opacity: 1;

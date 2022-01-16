@@ -187,6 +187,7 @@ export default function PersonalityResult({ title }) {
                             {personality_result.data.map(({ name }) => {
                                 return (
                                     <InputFeild
+                                        className="w-5/6"
                                         key={name}
                                         value={data[name] || 0}
                                         label={`${name} :`}

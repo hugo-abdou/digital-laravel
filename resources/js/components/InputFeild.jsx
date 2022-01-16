@@ -4,7 +4,7 @@ import { classNames } from "../helpers";
 export default function InputFeild(props) {
     return (
         <label className="flex items-center">
-            <span className="mr-1 w-10 capitalize font-semibold">
+            <span className="mr-1 flex-1 capitalize font-semibold">
                 {props.label}
             </span>
             <input
@@ -13,7 +13,7 @@ export default function InputFeild(props) {
                 onChange={props.handelChange}
                 value={props.value || ""}
                 className={classNames(
-                    "w-full py-0 border-gray-400 rounded-md",
+                    "flex-1 py-0 border-gray-400 rounded-md",
                     props.className
                 )}
             />

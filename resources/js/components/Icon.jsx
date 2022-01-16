@@ -8,15 +8,17 @@ import {
     FaHeartbeat,
     FaBars,
     FaSpinner,
+    FaCaretUp,
 } from "react-icons/fa";
 
-export default function Icon({ name }) {
-    if (!name) return <FaExclamationTriangle />;
-    if (name == "user-circle") return <FaUserCircle />;
-    if (name == "clipboard-list") return <FaClipboard />;
-    if (name == "chart-bar") return <FaChartBar />;
-    if (name == "cog") return <FaCog />;
-    if (name == "heart-beat") return <FaHeartbeat />;
-    if (name == "bars") return <FaBars />;
-    if (name == "loader") return <FaSpinner />;
+export default function Icon({ name, className }) {
+    if (!name) return <FaExclamationTriangle className={className} />;
+    if (name == "user-circle") return <FaUserCircle className={className} />;
+    if (name == "clipboard-list") return <FaClipboard className={className} />;
+    if (name == "chart-bar") return <FaChartBar className={className} />;
+    if (name == "cog") return <FaCog className={className} />;
+    if (name == "heart-beat") return <FaHeartbeat className={className} />;
+    if (name == "bars") return <FaBars className={className} />;
+    if (name == "loader") return <FaSpinner className={className} />;
+    if (name == "caret-up") return <FaCaretUp className={className} />;
 }

@@ -97,4 +97,17 @@ class UserController extends Controller
         });
         return back(303);
     }
+
+    public function create_goal(Request $request)
+    {
+        $data =  $request->validate([
+            'goal' => 'required|string'
+        ]);
+
+        user()->goals()->create([
+            'pourcentage' => $data['goal']
+        ]);
+
+        return back(303);
+    }
 }

@@ -21,46 +21,50 @@ export default function Card({ className, title, children, MenuItems }) {
                 <div className="flex-1 font-bold text-lg text-black">
                     <h4>{title}</h4>
                 </div>
-                <div className="flex-shrink-0 self-center flex">
-                    <Menu
-                        as="div"
-                        className="relative z-30 inline-block text-left"
-                    >
-                        {({ open }) => (
-                            <>
-                                <div>
-                                    <Menu.Button className="-m-2 p-2 rounded-full flex items-center text-gray-400 hover:text-gray-600">
-                                        <span className="sr-only">
-                                            Open options
-                                        </span>
-                                        <DotsVerticalIcon
-                                            className="h-5 w-5"
-                                            aria-hidden="true"
-                                        />
-                                    </Menu.Button>
-                                </div>
+                {MenuItems && (
+                    <div className="flex-shrink-0 self-center flex">
+                        <Menu
+                            as="div"
+                            className="relative z-30 inline-block text-left"
+                        >
+                            {({ open }) => (
+                                <>
+                                    <div>
+                                        <Menu.Button className="-m-2 p-2 rounded-full flex items-center text-gray-400 hover:text-gray-600">
+                                            <span className="sr-only">
+                                                Open options
+                                            </span>
+                                            <DotsVerticalIcon
+                                                className="h-5 w-5"
+                                                aria-hidden="true"
+                                            />
+                                        </Menu.Button>
+                                    </div>
 
-                                <Transition
-                                    show={open}
-                                    as={Fragment}
-                                    enter="transition ease-out duration-100"
-                                    enterFrom="transform opacity-0 scale-95"
-                                    enterTo="transform opacity-100 scale-100"
-                                    leave="transition ease-in duration-75"
-                                    leaveFrom="transform opacity-100 scale-100"
-                                    leaveTo="transform opacity-0 scale-95"
-                                >
-                                    <Menu.Items
-                                        static
-                                        className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    <Transition
+                                        show={open}
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
                                     >
-                                        <div className="py-1">{MenuItems}</div>
-                                    </Menu.Items>
-                                </Transition>
-                            </>
-                        )}
-                    </Menu>
-                </div>
+                                        <Menu.Items
+                                            static
+                                            className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                        >
+                                            <div className="py-1">
+                                                {MenuItems}
+                                            </div>
+                                        </Menu.Items>
+                                    </Transition>
+                                </>
+                            )}
+                        </Menu>
+                    </div>
+                )}
             </div>
             <div className="my-2">{children}</div>
         </div>
