@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     // pages
-    Route::get('/persona-dashboard', DashboardController::class);
-    Route::get('/personality-profile', ProfileController::class);
-    Route::get('/development-progress', DevelopmentProgressController::class);
+    Route::get('/persona-dashboard', [DashboardController::class, 'personaDashboard']);
+    Route::get('/personality-profile', [DashboardController::class, 'personalityProfile']);
+    Route::get('/development-progress', [DashboardController::class, 'developmentProgress']);
+    Route::get('/career-demographics', [DashboardController::class, 'careerDemographics']);
 
     // action
     Route::put('/users/{user}/update', [UserController::class, 'update']);
