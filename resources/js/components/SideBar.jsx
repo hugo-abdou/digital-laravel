@@ -36,7 +36,7 @@ export default function SideBar({ isOpen }) {
                             isOpen={isOpen}
                         />
                         <SideBarLink
-                            href="/"
+                            href="/career-demographics"
                             name="Career Demographics"
                             icon="cog"
                             isOpen={isOpen}

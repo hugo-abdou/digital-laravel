@@ -76,5 +76,6 @@ class DashboardController extends Controller
     }
     public function careerDemographics()
     {
+        return inertia('CareerDemographics');
     }
 }

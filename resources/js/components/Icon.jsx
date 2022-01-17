@@ -10,6 +10,7 @@ import {
     FaSpinner,
     FaCaretUp,
     FaCaretDown,
+    FaStar,
 } from "react-icons/fa";
 
 export default function Icon({ name, className }) {
@@ -23,4 +24,5 @@ export default function Icon({ name, className }) {
     if (name == "loader") return <FaSpinner className={className} />;
     if (name == "caret-up") return <FaCaretUp className={className} />;
     if (name == "caret-down") return <FaCaretDown className={className} />;
+    if (name == "star") return <FaStar className={className} />;
 }
