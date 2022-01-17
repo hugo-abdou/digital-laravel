@@ -56,7 +56,7 @@ function GoalsCard({ items, addGoal }) {
                 </div>
             )}
 
-            <ul>
+            <ul className={classNames(!addGoal ? "mt-7" : "")}>
                 {items.map((item) => {
                     return (
                         <li
@@ -69,8 +69,13 @@ function GoalsCard({ items, addGoal }) {
                             <span className="flex items-center font-bold text-lg text-black">
                                 {item.pourcentage}%
                                 <Icon
-                                    name="caret-up"
-                                    className="inline-block text-green-400 text-lg ml-2"
+                                    name={item.up ? "caret-up" : "caret-down"}
+                                    className={classNames(
+                                        item.up
+                                            ? "text-green-400"
+                                            : "text-red-400",
+                                        "inline-block  text-lg ml-2"
+                                    )}
                                 />
                             </span>
                         </li>
@@ -207,20 +212,20 @@ export default function DevelopmentProgress() {
             <div className="mt-10 flex gap-4">
                 {goals && (
                     <GoalsCard
-                        addGoal
+                        addGoal={goals.length < 18}
                         items={goals.filter((item, index) =>
                             index < 6 ? item : null
                         )}
                     />
                 )}
-                {goals.length > 5 && (
+                {goals.length > 6 && (
                     <GoalsCard
                         items={goals.filter((item, index) =>
                             index > 5 && index < 12 ? item : null
                         )}
                     />
                 )}
-                {goals.length > 11 && (
+                {goals.length > 12 && (
                     <GoalsCard
                         items={goals.filter((item, index) =>
                             index > 11 ? item : null

@@ -1,45 +1,61 @@
-import { Link, usePage } from "@inertiajs/inertia-react";
-import React from "react";
+import { usePage } from "@inertiajs/inertia-react";
+import React, { useState } from "react";
 import { classNames } from "../helpers";
 import Card from "./Card";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 export default function Indicators() {
-    const {
-        url,
-        props: { indicator },
-    } = usePage();
-    const links = ["e", "n", "f", "s", "t", "p", "i", "j", "d", "i", "s", "k"];
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
+    const [selectedIndicator, setIndicator] = useState(0);
+    const { indicators } = usePage().props;
     return (
         <Card title="Indicators">
-            <div className="flex items-start">
-                <div className="w-1/3">
-                    <span className="bg-[#ED7D31] text-white text-center leading-10 uppercase w-10 h-10 block font-bold text-lg rounded-full">
-                        {indicator.name}
-                    </span>
-                </div>
-                <p className="ml-4 text-sm text-dark-gray">
-                    {indicator.description}
-                </p>
-            </div>
-            <div className="flex uppercase justify-center space-x-2 mt-5">
-                {links.map((name, index) => {
+            <Slider
+                className="mb-5"
+                customPaging={(i) => {
                     return (
-                        <Link
-                            key={index}
-                            preserveScroll
-                            className={classNames(
-                                " w-5 h-5 leading-5 text-center text-xs font-bold rounded-full",
-                                url == `/personality-profile?indicator=${name}`
-                                    ? "bg-d-yellow text-white"
-                                    : "bg-gray-300 text-black"
-                            )}
-                            href={`/personality-profile?indicator=${name}`}
-                        >
-                            {name}
-                        </Link>
+                        <div>
+                            <span
+                                className={classNames(
+                                    i == selectedIndicator
+                                        ? "bg-d-yellow text-white"
+                                        : "bg-gray-300 text-black",
+                                    "rounded-full w-6 h-6 font-semibold inline-block"
+                                )}
+                                onClick={() => setIndicator(i)}
+                            >
+                                {indicators[i].name}
+                            </span>
+                        </div>
+                    );
+                }}
+                {...settings}
+            >
+                {indicators.map((indicator) => {
+                    return (
+                        <div key={indicator.id} className="mb-5">
+                            <div className="flex">
+                                <div className="w-1/3">
+                                    <span className="bg-[#ED7D31] text-white text-center leading-10 uppercase w-10 h-10 block font-bold text-lg rounded-full">
+                                        {indicator.name}
+                                    </span>
+                                </div>
+                                <p className="ml-4 text-sm text-dark-gray">
+                                    {indicator.description}
+                                </p>
+                            </div>
+                        </div>
                     );
                 })}
-            </div>
+            </Slider>
         </Card>
     );
 }

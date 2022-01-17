@@ -10,9 +10,11 @@ export default function PersonalityDefinition({ title, columName }) {
             <div className="text-sm text-dark-gray space-y-3">
                 {personality_definition ? (
                     <p>
-                        <span className="uppercase mr-1 font-bold">
-                            {personality_definition.name}
-                        </span>
+                        {columName == "definition" && (
+                            <span className="uppercase mr-1 font-bold">
+                                {personality_definition.name}
+                            </span>
+                        )}
                         {personality_definition[columName]}
                     </p>
                 ) : (

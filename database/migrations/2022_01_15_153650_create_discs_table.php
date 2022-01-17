@@ -17,6 +17,7 @@ class CreateDiscsTable extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('user_id');
+            $table->string('pourcentage')->default(0);
             $table->string('d')->default(0);
             $table->string('di')->default(0);
             $table->string('dc')->default(0);

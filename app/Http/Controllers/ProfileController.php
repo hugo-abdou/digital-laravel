@@ -25,19 +25,8 @@ class ProfileController extends Controller
                 return IndicatorResource::collection($personality);
             },
             "personality_definition" => fn () => user()->personality,
-            "indicator" => function () use ($request) {
-                try {
-                    $indicator = null;
-                    if ($request->has('indicator')) {
-                        $indicator = Indicator::where('name', $request->indicator)->first();
-                    } else {
-                        $indicator = Indicator::where('name', 'i')->first();
-                    }
-
-                    return $indicator->only('name', 'description');
-                } catch (\Throwable $th) {
-                    throw new Exception("Indicator Not Found", 1);
-                }
+            "indicators" => function () {
+                return Indicator::select('id', 'name', 'description')->get();
             },
             'discs' => function () {
                 if (!user()->discs()->count()) {

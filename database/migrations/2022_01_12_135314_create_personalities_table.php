@@ -22,6 +22,7 @@ class CreatePersonalitiesTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('definition');
+            $table->string('breakdown');
             $table->text('workplace_attributes');
             $table->text('interpersonal_attributes');
             $table->text('strength');

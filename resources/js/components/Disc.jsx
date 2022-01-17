@@ -60,7 +60,7 @@ function Pourcentage(props) {
                 ]}
             />
             <span className="text-lg font-bold text-black">
-                {props.disc.d}%
+                {props.disc.pourcentage}%
             </span>
         </div>
     );
@@ -109,6 +109,18 @@ export default function Disc() {
                         {data.discs.map((disc) => {
                             return (
                                 <div key={disc.id} className="space-y-4 px-4">
+                                    <InputFeild
+                                        className="w-20"
+                                        value={disc.pourcentage}
+                                        handelChange={(e) =>
+                                            setFormData(
+                                                "pourcentage",
+                                                disc,
+                                                e.target.value
+                                            )
+                                        }
+                                        label={`${disc.name} :`}
+                                    />
                                     <InputFeild
                                         className="w-20"
                                         value={disc.d}

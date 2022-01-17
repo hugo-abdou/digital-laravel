@@ -15,60 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // create the first user to get access to dashboard
         \App\Models\User::factory(1)->create();
 
+        // get the domy data from data.php file
+        $data = require('database/seeders/data.php');
 
+        collect($data['indicators'])->each(fn ($item) => Indicator::create($item));
 
-        collect([
-            [
-                'name' => 'i',
-                "description" => 'Often like working alone or in small groups, prefer a more deliberate pace, and like to focus at at task at a time',
-            ],
-            [
-                'name' => 'e',
-                "description" => 'Extraverts are interested in engaging with their environment, and they feed off the responses of the people and events around them. ',
-            ],
-            [
-                'name' => 's',
-                "description" => 'Tend to process things in a step-by-step linear sequence and observe and remember specific information',
-            ],
-            [
-                'name' => 't',
-                "description" => 'Tend to make decisions using logical analysis, objectively weigh pros and cons, and value honesty, consistency, and fairness',
-            ],
-            [
-                'name' => 'f',
-                "description" => 'Tend to be sensitive and cooperative, and decide based on their own personal values and will be affected by their actions.',
-            ],
-            [
-                'name' => 'j',
-                "description" => 'Tend to be organized and prepared, like to make and stick to plans, and are comfortable following most rules.',
-            ],
-            [
-                'name' => 'n',
-                "description" => 'Prefer to focus on posibilities and the big pictures, easily see patterns, value innovation, and seeks creative solutions to problems',
-            ],
-            [
-                'name' => 'p',
-                "description" => 'Tend to make decisions using logical analysis, objectively weigh pros and cons, and value honesty, consistency, and fairness'
-            ],
-        ])->each(fn ($model) => Indicator::create([
-            'name' => $model['name'],
-            "description" => $model['description']
-        ]));
-
-        Personality::create([
-            'name' => 'ESTJ',
-
-            "definition" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non ',
-
-            "weaknesses" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non',
-
-            "strength" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non ',
-
-            "interpersonal_attributes" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non ',
-
-            "workplace_attributes" => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aliquam aperiam non '
-        ]);
+        collect($data['personalities'])->each(fn ($item) => Personality::create($item));
     }
 }

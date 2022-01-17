@@ -29,7 +29,7 @@ class DashboardController extends Controller
 
                 return IndicatorResource::collection($personality);
             },
-            "personality_definition" => fn () => user()->personality->only('name', 'definition'),
+            "personality_definition" => fn () => user()->personality ? user()->personality->only('name', 'definition') : null,
         ]);
     }
 }

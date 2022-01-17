@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Disc;
+use App\Models\Goal;
 use App\Models\Indicator;
 use App\Models\IndicatorUser;
 use App\Models\OveralProgress;
@@ -90,6 +91,7 @@ class UserController extends Controller
             $model = Disc::where('id', $disc['id'])->first();
 
             $model->update([
+                'pourcentage' => $disc['pourcentage'],
                 'd' => $disc['d'],
                 'di' => $disc['di'],
                 'dc' => $disc['dc'],
@@ -104,8 +106,17 @@ class UserController extends Controller
             'goal' => 'required|string'
         ]);
 
+
+        if ($latstRecord = Goal::where('user_id', user()->id)->orderBy('updated_at', 'DESC')->first()) {
+            $isGreaterThanLastRecord = $data['goal'] >= $latstRecord->pourcentage;
+        } else {
+            $isGreaterThanLastRecord = true;
+        }
+
+
         user()->goals()->create([
-            'pourcentage' => $data['goal']
+            'pourcentage' => $data['goal'],
+            'up' =>  $isGreaterThanLastRecord
         ]);
 
         return back(303);
