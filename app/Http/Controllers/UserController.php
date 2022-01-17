@@ -7,6 +7,7 @@ use App\Models\Goal;
 use App\Models\Indicator;
 use App\Models\IndicatorUser;
 use App\Models\OveralProgress;
+use App\Models\Personality;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -78,6 +79,14 @@ class UserController extends Controller
         $indicator_user = user()->indicator_user()->where('indicator_id', $curentId)->first();
 
         $indicator_user->update(['indicator_id' => $newId]);
+
+        $newPersonalityName = user()->indicators->implode('name', '');
+
+        $newPersonalityId = Personality::where('name', $newPersonalityName)->first()->id;
+
+        user()->update([
+            'personality_id' => $newPersonalityId
+        ]);
 
         return back(303);
     }

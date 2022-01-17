@@ -27,6 +27,14 @@ class DashboardController extends Controller
 
                 $personality = auth()->user()->indicators->all();
 
+                $newPersonalityName = user()->indicators->implode('name', '');
+
+                $newPersonalityId = Personality::where('name', $newPersonalityName)->first()->id;
+
+                user()->update([
+                    'personality_id' => $newPersonalityId
+                ]);
+
                 return IndicatorResource::collection($personality);
             },
             "personality_definition" => fn () => user()->personality ? user()->personality->only('name', 'definition') : null,
