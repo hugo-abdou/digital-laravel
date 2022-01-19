@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Disc;
-use App\Models\Goal;
-use App\Models\Indicator;
-use App\Models\IndicatorUser;
 use App\Models\OveralProgress;
-use App\Models\Personality;
 use App\Models\User;
+use Facades\App\Services\UserService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -52,40 +48,19 @@ class UserController extends Controller
             "e" => "sometimes|numeric|between:0,100",
             "j" => "sometimes|numeric|between:0,100",
         ]);
-        user()->indicators->each(function ($indicator) use ($data) {
-            if (isset($data[$indicator->name])) {
-                user()->indicators()->syncWithoutDetaching([
-                    $indicator->id => [
-                        'pourcentage' => $data[$indicator->name]
-                    ]
-                ]);
-            }
-        });
+        UserService::update_personality_result($data);
 
         return back(303);
     }
 
-    public function change_personality(User $user, Request $request)
+    public function change_personality(Request $request)
     {
         $data = $request->validate([
             "curent" => "required|string",
             "new" => "required|string",
         ]);
 
-        $curentId = Indicator::where('name',  $data['curent'])->first()->id;
-        $newId = Indicator::where('name',  $data['new'])->first()->id;
-
-        $indicator_user = user()->indicator_user()->where('indicator_id', $curentId)->first();
-
-        $indicator_user->update(['indicator_id' => $newId]);
-
-        $newPersonalityName = user()->indicators->implode('name', '');
-
-        $newPersonalityId = Personality::where('name', $newPersonalityName)->first()->id;
-
-        user()->update([
-            'personality_id' => $newPersonalityId
-        ]);
+        UserService::change_personality($data);
 
         return back(303);
     }
@@ -95,16 +70,7 @@ class UserController extends Controller
         $data = $request->validate([
             'discs' => 'required|array'
         ]);
-        collect($data['discs'])->each(function ($disc) {
-            $model = Disc::where('id', $disc['id'])->first();
-
-            $model->update([
-                'pourcentage' => $disc['pourcentage'],
-                'd' => $disc['d'],
-                'di' => $disc['di'],
-                'dc' => $disc['dc'],
-            ]);
-        });
+        UserService::update_discs($data);
         return back(303);
     }
 
@@ -114,19 +80,27 @@ class UserController extends Controller
             'goal' => 'required|string'
         ]);
 
+        UserService::create_goal($data);
 
-        if ($latstRecord = Goal::where('user_id', user()->id)->orderBy('updated_at', 'DESC')->first()) {
-            $isGreaterThanLastRecord = $data['goal'] >= $latstRecord->pourcentage;
-        } else {
-            $isGreaterThanLastRecord = true;
-        }
-
-
-        user()->goals()->create([
-            'pourcentage' => $data['goal'],
-            'up' =>  $isGreaterThanLastRecord
+        return back(303);
+    }
+    public function create_influencer(Request $request)
+    {
+        $data =  $request->validate([
+            'name' => 'required|string'
         ]);
 
+        UserService::create_influencer($data);
+
+        return back(303);
+    }
+
+    public function update_influencer(Request $request)
+    {
+        $data = $request->validate([
+            'influencers' => 'required|array'
+        ]);
+        UserService::update_influencer($data['influencers']);
         return back(303);
     }
 }

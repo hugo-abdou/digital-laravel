@@ -5,6 +5,7 @@ import Card from "./Card";
 import { PencilAltIcon } from "@heroicons/react/solid";
 import { classNames } from "../helpers";
 import Icon from "./Icon";
+import Button from "./Button";
 
 function MenuItems(props) {
     return (
@@ -78,15 +79,12 @@ export default function PersonalityBackground() {
                 )}
             </div>
             {editable && (
-                <button
+                <Button
+                    text="Save"
+                    className="mt-5 mx-auto"
+                    processing={processing}
                     onClick={handelSubmit}
-                    className="px-4 py-2 mt-5 w-full font-medium tracking-wide text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none flex justify-center items-center"
-                >
-                    <span className="inline-block animate-spin px-2">
-                        {processing && <Icon name="loader" className="mr-2" />}
-                    </span>
-                    Save
-                </button>
+                />
             )}
         </Card>
     );

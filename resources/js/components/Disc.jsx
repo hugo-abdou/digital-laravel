@@ -8,6 +8,7 @@ import InputFeild from "./InputFeild";
 import Icon from "./Icon";
 import { useForm, usePage } from "@inertiajs/inertia-react";
 import { toInteger } from "lodash";
+import Button from "./Button";
 
 function MenuItems(props) {
     return (
@@ -162,18 +163,12 @@ export default function Disc() {
                         })}
                     </div>
 
-                    <button
-                        // onClick={handelSubmit}
-                        className="px-4 py-2 mx-auto mt-5 font-medium tracking-wide text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none flex justify-center items-center"
+                    <Button
+                        text="Save"
+                        className="mt-5 mx-auto"
+                        processing={processing}
                         onClick={handelSubmit}
-                    >
-                        {processing && (
-                            <span className="inline-block animate-spin px-2">
-                                <Icon name="loader" className="mr-2" />
-                            </span>
-                        )}
-                        Save
-                    </button>
+                    />
                 </>
             )}
         </Card>

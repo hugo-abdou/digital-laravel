@@ -4,12 +4,16 @@ import { classNames } from "../helpers";
 export default function InputFeild(props) {
     return (
         <label className="flex items-center">
-            <span className="mr-1 flex-1 capitalize font-semibold">
-                {props.label}
-            </span>
+            {props.label && (
+                <span className="mr-1 flex-1 capitalize font-semibold">
+                    {props.label}
+                </span>
+            )}
+
             <input
                 max={100}
-                type="number"
+                placeholder={props.placeholder}
+                type={props.type || "number"}
                 onChange={props.handelChange}
                 value={props.value || ""}
                 className={classNames(

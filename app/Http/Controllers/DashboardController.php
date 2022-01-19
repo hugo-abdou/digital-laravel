@@ -9,6 +9,7 @@ class DashboardController extends Controller
     public  function personaDashboard()
     {
         return inertia('PersonaDashboard', [
+            "influencers" => fn () => DashboardService::get_influencers('active'),
             "overal_progress" => DashboardService::get_overal_progress(),
             "personality_result" => fn () => DashboardService::get_personality_result(),
             "personality" => fn () =>  DashboardService::get_personality_definition(),
@@ -17,6 +18,7 @@ class DashboardController extends Controller
     public function developmentProgress()
     {
         return inertia('DevelopmentProgress', [
+            "influencers" => fn () => DashboardService::get_influencers('active'),
             'goals' => fn () => DashboardService::get_goals(),
             'goal' => fn () => DashboardService::get_goal()
         ]);
@@ -32,6 +34,8 @@ class DashboardController extends Controller
     }
     public function careerDemographics()
     {
-        return inertia('CareerDemographics');
+        return inertia('CareerDemographics', [
+            "influencers" => fn () => DashboardService::get_influencers()
+        ]);
     }
 }

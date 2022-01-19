@@ -23,4 +23,6 @@ Route::middleware('auth')->group(function () {
     Route::put('/change_personality/{user}', [UserController::class, 'change_personality']);
     Route::put('/discs/update', [UserController::class, 'update_discs']);
     Route::post('/goal/create', [UserController::class, 'create_goal']);
+    Route::post("/influencer/create", [UserController::class, 'create_influencer']);
+    Route::put("/influencers/update", [UserController::class, 'update_influencer']);
 });

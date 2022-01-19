@@ -6,6 +6,7 @@ import { classNames } from "../helpers";
 import Card from "./Card";
 import Icon from "./Icon";
 import SelectFeild from "./SelectFeild";
+import Button from "./Button";
 
 function InputFeild(props) {
     if (!props.editable) return <span className="ml-2 ">{props.value}</span>;
@@ -244,15 +245,12 @@ export default function PersonaDetails({ className }) {
             </table>
 
             {editable && (
-                <button
+                <Button
+                    text="Save"
+                    className="mt-5 mx-auto w-full"
+                    processing={processing}
                     onClick={handelSubmit}
-                    className="px-4 py-2 mt-4 w-full font-medium tracking-wide text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none flex justify-center items-center"
-                >
-                    <span className="inline-block animate-spin px-2">
-                        {processing && <Icon name="loader" className="mr-2" />}
-                    </span>
-                    Save
-                </button>
+                />
             )}
         </Card>
     );

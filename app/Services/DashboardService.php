@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Http\Resources\IndicatorResource;
-use App\Models\Disc;
 use App\Models\Indicator;
 use App\Models\OveralProgress;
 use App\Models\Personality;
@@ -81,5 +80,9 @@ class DashboardService extends Facade
             'wellness' => $overal_progress->wellness,
             'goals' => $this->get_goal()
         ];
+    }
+    public function get_influencers($active = null)
+    {
+        return  user()->influencers;
     }
 }

@@ -6,6 +6,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { classNames } from "../helpers";
+import Button from "./Button";
 import Card from "./Card";
 import Icon from "./Icon";
 import InputFeild from "./InputFeild";
@@ -205,17 +206,12 @@ export default function PersonalityResult({ title }) {
                                 </span>
                             </div>
                         ) : null}
-                        <button
+                        <Button
+                            text="Save"
+                            className="mt-5 mx-auto w-full"
+                            processing={processing}
                             onClick={handelSubmit}
-                            className="px-4 py-2 mt-5 w-full font-medium tracking-wide text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none flex justify-center items-center"
-                        >
-                            <span className="inline-block animate-spin px-2">
-                                {processing && (
-                                    <Icon name="loader" className="mr-2" />
-                                )}
-                            </span>
-                            Save
-                        </button>
+                        />
                     </>
                 )}
             </div>

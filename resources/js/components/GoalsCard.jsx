@@ -3,6 +3,7 @@ import { PencilAltIcon } from "@heroicons/react/solid";
 import { useForm, usePage } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import { classNames } from "../helpers";
+import Button from "./Button";
 import Card from "./Card";
 import Icon from "./Icon";
 import InputFeild from "./InputFeild";
@@ -35,20 +36,12 @@ function Goals({ items, addGoal }) {
                         label={`add Goal :`}
                         handelChange={(e) => setData("goal", e.target.value)}
                     />
-                    <button
+                    <Button
+                        text="Save"
+                        className="mt-5 mx-auto w-full"
+                        processing={processing}
                         onClick={handelSubmit}
-                        className="px-4 py-2 mt-5 mx-auto font-medium tracking-wide text-white capitalize bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none flex justify-center items-center text-sm"
-                    >
-                        {processing && (
-                            <span className="inline-block  px-2">
-                                <Icon
-                                    name="loader"
-                                    className="mr-2 animate-spin"
-                                />
-                            </span>
-                        )}
-                        Save
-                    </button>
+                    />
                 </div>
             )}
 

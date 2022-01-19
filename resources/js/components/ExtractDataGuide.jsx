@@ -1,4 +1,3 @@
-import { usePage } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import { classNames } from "../helpers";
 import Card from "./Card";
@@ -48,9 +47,9 @@ export default function Indicators() {
                 }}
                 {...settings}
             >
-                {[1, 2, 3].map(() => {
+                {[1, 2, 3].map((i) => {
                     return (
-                        <div>
+                        <div key={i}>
                             <div className="flex items-center">
                                 <div className="w-1/2">
                                     <img src="/assets/laptop.png" alt="" />

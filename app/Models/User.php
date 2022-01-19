@@ -56,7 +56,6 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Personality::class);
     }
-
     public function indicators()
     {
         return $this->belongsToMany(Indicator::class)->withPivot(['pourcentage']);
@@ -69,9 +68,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Disc::class);
     }
-
     public function goals()
     {
         return $this->hasMany(Goal::class);
+    }
+    public function influencers()
+    {
+        return $this->hasMany(Influencer::class);
     }
 }
