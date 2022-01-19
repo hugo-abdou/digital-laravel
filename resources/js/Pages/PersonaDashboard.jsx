@@ -6,7 +6,7 @@ import PersonalityBackground from "../components/PersonalityBackground";
 import Personality from "../components/Personality";
 import PersonalityResult from "../components/PersonalityResult";
 
-const Home = function () {
+export default function PersonaDashboard() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row-dense gap-4 px-4">
             <PersonaDetails className="row-span-2" />
@@ -20,6 +20,4 @@ const Home = function () {
             <PersonalityResult title="Personality Result" />
         </div>
     );
-};
-
-export default Home;
+}

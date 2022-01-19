@@ -2,20 +2,20 @@ import { usePage } from "@inertiajs/inertia-react";
 import React from "react";
 import Card from "./Card";
 
-export default function PersonalityDefinition({ title, columName }) {
-    const { personality_definition } = usePage().props;
+export default function Personality({ title, columName }) {
+    const { personality } = usePage().props;
 
     return (
         <Card title={title}>
             <div className="text-sm text-dark-gray space-y-3">
-                {personality_definition ? (
+                {personality ? (
                     <p>
                         {columName == "definition" && (
                             <span className="uppercase mr-1 font-bold">
-                                {personality_definition.name}
+                                {personality.name}
                             </span>
                         )}
-                        {personality_definition[columName]}
+                        {personality[columName]}
                     </p>
                 ) : (
                     <span className="uppercase mr-1 font-bold">

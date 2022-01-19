@@ -70,7 +70,6 @@ export default function OveralProgress({ className }) {
     const [editable, setEditable] = useState(false);
 
     const { data, setData, put, processing, errors } = useForm({
-        goals: overal_progress.goals,
         wellness: overal_progress.wellness,
     });
 
@@ -120,10 +119,8 @@ export default function OveralProgress({ className }) {
                 <InputFeild
                     type="number"
                     name="Goals"
-                    editable={editable}
-                    error={errors.goals}
-                    handelChange={(e) => setData("goals", e.target.value)}
-                    value={data.goals}
+                    editable={false}
+                    value={Math.floor(overal_progress.goals)}
                 />
             </div>
             <div className="flex items-center justify-between p-3">

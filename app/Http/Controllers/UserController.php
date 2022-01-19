@@ -33,7 +33,6 @@ class UserController extends Controller
     public function update_overal_progress(Request $request, OveralProgress $overal_progress)
     {
         $data = $request->validate([
-            "goals" => "required|numeric|between:0,100",
             "wellness" => "required|numeric|between:0,100",
         ]);
         $overal_progress->update($data);

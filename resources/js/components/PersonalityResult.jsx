@@ -159,7 +159,7 @@ export default function PersonalityResult({ title }) {
             title={title}
         >
             <p className="text-sm text-dark-gray">
-                Intrevorted Intuitive Feeling Perceiver
+                {personality_result.breakdown}
             </p>
             <div
                 className={

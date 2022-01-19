@@ -15,11 +15,4 @@ class Disc extends Model
      * @var array<int, string>
      */
     protected $guarded = [];
-
-    public function createDefaultDiscs()
-    {
-        collect(['d', "i", 's', 'c'])->each(fn ($discName) => user()->discs()->create([
-            'name' => $discName
-        ]));
-    }
 }
