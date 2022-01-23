@@ -18,11 +18,13 @@ Route::middleware('auth')->group(function () {
 
     // action
     Route::put('/users/{user}/update', [UserController::class, 'update']);
-    Route::put('/overal_progress/{overal_progress}/update', [UserController::class, 'update_overal_progress']);
+    Route::put('/wellness/update', [UserController::class, 'update_wellness']);
     Route::put('/personality_result/{user}/update', [UserController::class, 'update_personality_result']);
     Route::put('/change_personality/{user}', [UserController::class, 'change_personality']);
     Route::put('/discs/update', [UserController::class, 'update_discs']);
     Route::post('/goal/create', [UserController::class, 'create_goal']);
     Route::post("/influencer/create", [UserController::class, 'create_influencer']);
     Route::put("/influencers/update", [UserController::class, 'update_influencer']);
+    Route::put("/activities/update", [UserController::class, 'update_activities']);
+    Route::put("/people/update", [UserController::class, 'update_people']);
 });

@@ -26,12 +26,14 @@ class UserController extends Controller
         return back(303);
     }
 
-    public function update_overal_progress(Request $request, OveralProgress $overal_progress)
+    public function update_wellness(Request $request)
     {
         $data = $request->validate([
-            "wellness" => "required|numeric|between:0,100",
+            "wellness" => "sometimes|numeric|between:0,100",
+            "activity" => "sometimes|numeric|between:0,100",
+            "inactivity" => "sometimes|numeric|between:0,100",
         ]);
-        $overal_progress->update($data);
+        user()->wellness->update($data);
         return back(303);
     }
 
@@ -101,6 +103,35 @@ class UserController extends Controller
             'influencers' => 'required|array'
         ]);
         UserService::update_influencer($data['influencers']);
+        return back(303);
+    }
+    public function update_activities(Request $request)
+    {
+        $data = $request->validate([
+            "work" => "required|string",
+            "eating" => "required|string",
+            "sleep" => "required|string",
+            "driving" => "required|string",
+            "networking" => "required|string",
+            "materila_art" => "required|string",
+            "meetings" => "required|string",
+            "family_actv" => "required|string",
+        ]);
+        UserService::update_activities($data);
+        return back(303);
+    }
+    public function update_people(Request $request)
+    {
+        $data = $request->validate([
+            "hasband" => "required|string",
+            "chidlrens" => "required|string",
+            "gloria" => "required|string",
+            "self_working" => "required|string",
+            "self" => "required|string",
+            "boutique_owner" => "required|string",
+            "other" => "required|string",
+        ]);
+        UserService::update_people($data);
         return back(303);
     }
 }

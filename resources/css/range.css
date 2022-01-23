@@ -1,0 +1,11 @@
+.input-range__track--active {
+    background: #eee;
+}
+.input-range__slider {
+    background-color: var(--range-color);
+    border-color: var(--range-color);
+}
+.input-range__label--max,
+.input-range__label--min {
+    display: none;
+}

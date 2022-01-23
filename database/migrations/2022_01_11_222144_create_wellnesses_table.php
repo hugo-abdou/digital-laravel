@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOveralProgressTable extends Migration
+class CreateWellnessesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateOveralProgressTable extends Migration
      */
     public function up()
     {
-        Schema::create('overal_progress', function (Blueprint $table) {
+        Schema::create('wellnesses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('goals')->default(0);
+            $table->string('activity')->default(0);
+            $table->string('inactivity')->default(0);
             $table->string('wellness')->default(0);
             $table->timestamps();
         });

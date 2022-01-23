@@ -48,9 +48,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function overal_progress()
+    public function wellness()
     {
-        return $this->hasOne(OveralProgress::class);
+        return $this->hasOne(Wellness::class);
     }
     public function personality()
     {
@@ -75,5 +75,13 @@ class User extends Authenticatable
     public function influencers()
     {
         return $this->hasMany(Influencer::class);
+    }
+    public function activities()
+    {
+        return $this->hasOne(Activity::class);
+    }
+    public function people()
+    {
+        return $this->hasOne(People::class);
     }
 }

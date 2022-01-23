@@ -51,8 +51,12 @@ export default function Indicators() {
                     return (
                         <div key={i}>
                             <div className="flex items-center">
-                                <div className="w-1/2">
-                                    <img src="/assets/laptop.png" alt="" />
+                                <div className="w-1/2 ">
+                                    <img
+                                        src="/assets/laptop.png"
+                                        alt=""
+                                        className="h-80"
+                                    />
                                 </div>
                                 <div className="w-1/2 flex items-center">
                                     <div>

@@ -75,7 +75,7 @@ export default function OveralProgress({ className }) {
     });
 
     function handelSubmit() {
-        put(`/overal_progress/${overal_progress.id}/update`, {
+        put("/wellness/update", {
             preserveScroll: true,
             onSuccess() {
                 setEditable(false);

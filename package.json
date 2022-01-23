@@ -29,12 +29,14 @@
         "@inertiajs/inertia-react": "^0.7.1",
         "@inertiajs/progress": "^0.2.7",
         "@tailwindcss/forms": "^0.4.0",
+        "chart.js": "^3.7.0",
         "react": "^17.0.2",
+        "react-chartjs-2": "^4.0.1",
         "react-circular-progressbar": "^2.0.4",
         "react-dom": "^17.0.2",
         "react-icons": "^4.3.1",
+        "react-input-range": "^1.3.0",
         "react-minimal-pie-chart": "^8.2.0",
-        "react-range": "^1.8.11",
         "react-slick": "^0.28.1",
         "slick-carousel": "^1.8.1"
     }

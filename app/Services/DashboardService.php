@@ -6,6 +6,7 @@ use App\Http\Resources\IndicatorResource;
 use App\Models\Indicator;
 use App\Models\OveralProgress;
 use App\Models\Personality;
+use App\Models\Wellness;
 use Illuminate\Support\Facades\Facade;
 
 class DashboardService extends Facade
@@ -71,18 +72,40 @@ class DashboardService extends Facade
 
     public function get_overal_progress()
     {
-        $overal_progress = OveralProgress::firstOrCreate(
-            ['user_id' =>  auth()->id()],
-            ['user_id' =>  auth()->id()]
-        );
+        if (!user()->wellness()->count()) {
+            user()->wellness()->create([]);
+        }
+
         return  [
-            'id' => $overal_progress->id,
-            'wellness' => $overal_progress->wellness,
+            'id' => user()->wellness->id,
+            'wellness' => user()->wellness->wellness,
             'goals' => $this->get_goal()
         ];
+    }
+    public function get_wellness()
+    {
+        return  user()->wellness;
     }
     public function get_influencers($active = null)
     {
         return  user()->influencers;
+    }
+    public function get_activities()
+    {
+        if (user()->activities()->count()) {
+            return user()->activities;
+        } else {
+            user()->activities()->create([]);
+            return user()->activities;
+        }
+    }
+    public function get_people()
+    {
+        if (user()->people()->count()) {
+            return  user()->people;
+        } else {
+            user()->people()->create([]);
+            return  user()->people;
+        }
     }
 }

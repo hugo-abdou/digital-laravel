@@ -84,4 +84,13 @@ class UserService extends Facade
             }
         });
     }
+
+    public function update_activities($data)
+    {
+        user()->activities()->update($data);
+    }
+    public function update_people($data)
+    {
+        user()->people()->update($data);
+    }
 }
