@@ -7,16 +7,21 @@ export default function Personality({ title, columName }) {
 
     return (
         <Card title={title}>
-            <div className="text-sm text-dark-gray space-y-3">
+            <div className="text-sm text-dark-gray space-y-3 !max-h-[200px] overflow-auto">
                 {personality ? (
-                    <p>
+                    <div>
                         {columName == "definition" && (
-                            <span className="uppercase mr-1 font-bold">
+                            <span className="uppercase mr-1 font-bold ">
                                 {personality.name}
                             </span>
                         )}
-                        {personality[columName]}
-                    </p>
+                        <div
+                            className="inline"
+                            dangerouslySetInnerHTML={{
+                                __html: personality[columName],
+                            }}
+                        />
+                    </div>
                 ) : (
                     <span className="uppercase mr-1 font-bold">
                         No Data Found

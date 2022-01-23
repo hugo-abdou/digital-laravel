@@ -28,7 +28,7 @@ export default function Indicators() {
                                     i == selectedIndicator
                                         ? "bg-d-yellow text-white"
                                         : "bg-gray-300 text-black",
-                                    "rounded-full w-6 h-6 font-semibold inline-block"
+                                    "rounded-full  w-6 h-6 font-semibold inline-block"
                                 )}
                                 onClick={() => setIndicator(i)}
                             >
@@ -41,7 +41,10 @@ export default function Indicators() {
             >
                 {indicators.map((indicator) => {
                     return (
-                        <div key={indicator.id} className="mb-5">
+                        <div
+                            key={indicator.id}
+                            className="mb-5 h-[160px] overflow-auto"
+                        >
                             <div className="flex">
                                 <div className="w-1/3">
                                     <span className="bg-[#ED7D31] text-white text-center leading-10 uppercase w-10 h-10 block font-bold text-lg rounded-full">

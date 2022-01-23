@@ -75,7 +75,11 @@ export default function PersonalityBackground() {
                         defaultValue={data.background}
                     />
                 ) : (
-                    <p>{auth.user.background}</p>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: auth.user.background,
+                        }}
+                    />
                 )}
             </div>
             {editable && (
