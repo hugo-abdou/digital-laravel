@@ -15,6 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/personality-profile', [DashboardController::class, 'personalityProfile']);
     Route::get('/development-progress', [DashboardController::class, 'developmentProgress']);
     Route::get('/career-demographics', [DashboardController::class, 'careerDemographics']);
+    Route::get('/wellness-profile', [DashboardController::class, 'wellnessProfile']);
 
     // action
     Route::put('/users/{user}/update', [UserController::class, 'update']);

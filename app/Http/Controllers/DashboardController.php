@@ -41,4 +41,8 @@ class DashboardController extends Controller
             "people" => fn () => DashboardService::get_people(),
         ]);
     }
+    public function wellnessProfile()
+    {
+        return inertia('wellnessProfile');
+    }
 }

@@ -1,10 +1,5 @@
 const mix = require("laravel-mix");
 
-mix.webpackConfig({
-    output: {
-        chunkFilename: "js/[name].js",
-    },
-});
 // react
 mix.js(["resources/js/app.js", "resources/js/website.js"], "public/js")
     .react()
@@ -15,7 +10,7 @@ mix.js(["resources/js/app.js", "resources/js/website.js"], "public/js")
 mix.postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
 
 // hot reload
-mix.browserSync({
-    proxy: "http://digital-laravel.test/",
-    open: false,
-});
+// mix.browserSync({
+//     proxy: "http://digital-laravel.test/",
+//     open: false,
+// });

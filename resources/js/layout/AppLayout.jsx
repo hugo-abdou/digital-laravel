@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import { classNames } from "../helpers";
 
 export default function Layout({ children }) {
-    const [sideBarOpen, setSideBarOpen] = useState(false);
+    const [sideBarOpen, setSideBarOpen] = useState(true);
 
     function toggleSideBar() {
         setSideBarOpen(!sideBarOpen);

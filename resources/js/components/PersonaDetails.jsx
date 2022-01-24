@@ -138,7 +138,70 @@ export default function PersonaDetails({ className }) {
                                 value={data.occupation || ""}
                             >
                                 <option></option>
-                                <option>test</option>
+                                <option>Management Occupations</option>
+                                <option>
+                                    Business and Financial Operations
+                                    Occupations
+                                </option>
+                                <option>
+                                    Computer and Mathematical Occupations
+                                </option>
+                                <option>
+                                    Architecture and Engineering Occupations
+                                </option>
+                                <option>
+                                    Life, Physical, and Social Science
+                                    Occupations
+                                </option>
+                                <option>
+                                    Community and Social Service Occupations
+                                </option>
+                                <option>Legal Occupations</option>
+                                <option>
+                                    Educational Instruction and Library
+                                    Occupations
+                                </option>
+                                <option>
+                                    Arts, Design, Entertainment, Sports, and
+                                    Media Occupations
+                                </option>
+                                <option>
+                                    Healthcare Practitioners and Technical
+                                    Occupations
+                                </option>
+                                <option>Healthcare Support Occupations</option>
+                                <option>Protective Service Occupations</option>
+                                <option>
+                                    Food Preparation and Serving Related
+                                    Occupations
+                                </option>
+                                <option>
+                                    Building and Grounds Cleaning and
+                                    Maintenance Occupations
+                                </option>
+                                <option>
+                                    Personal Care and Service Occupations
+                                </option>
+                                <option>Sales and Related Occupations</option>
+                                <option>
+                                    Office and Administrative Support
+                                    Occupations
+                                </option>
+                                <option>
+                                    Farming, Fishing, and Forestry Occupations
+                                </option>
+                                <option>
+                                    Construction and Extraction Occupations
+                                </option>
+                                <option>
+                                    Installation, Maintenance, and Repair
+                                    Occupations
+                                </option>
+                                <option>Production Occupations</option>
+                                <option>
+                                    Transportation and Material Moving
+                                    Occupations
+                                </option>
                             </SelectFeild>
                         </td>
                     </tr>
