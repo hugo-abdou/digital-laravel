@@ -23,6 +23,10 @@ class UserController extends Controller
             "background" => "sometimes|string",
         ]);
         $user->update($data);
+        $user->profile()->update([
+            'age' => $data['age'],
+            'gender' => $data['gender'],
+        ]);
         return back(303);
     }
 
@@ -132,6 +136,30 @@ class UserController extends Controller
             "other" => "required|string",
         ]);
         UserService::update_people($data);
+        return back(303);
+    }
+
+    public function update_profile(Request $request)
+    {
+        $data = $request->validate([
+            'age' => "sometimes",
+            'body_age' => "sometimes",
+            'height' => "sometimes",
+            'weight' => "sometimes",
+            'target_body_fat' => "sometimes",
+            'cest' => "sometimes",
+            'waist' => "sometimes",
+            'legs' => "sometimes",
+            'body_fat' => "sometimes",
+            'bmi' => "sometimes",
+            'aerobic_fitness' => "sometimes",
+            'muscular_strength' => "sometimes",
+            'endurnce' => "sometimes",
+            'flexibility' => "sometimes",
+        ]);
+
+        user()->profile()->update($data);
+
         return back(303);
     }
 }

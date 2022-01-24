@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Mail\WelcomeMail;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,6 +17,7 @@ class User extends Authenticatable
     {
         parent::boot();
         static::created(function ($model) {
+            $model->profile()->create([]);
             Mail::to($model->email)->send(new WelcomeMail());
         });
     }
@@ -83,5 +83,9 @@ class User extends Authenticatable
     public function people()
     {
         return $this->hasOne(People::class);
+    }
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
     }
 }

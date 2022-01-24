@@ -28,4 +28,5 @@ Route::middleware('auth')->group(function () {
     Route::put("/influencers/update", [UserController::class, 'update_influencer']);
     Route::put("/activities/update", [UserController::class, 'update_activities']);
     Route::put("/people/update", [UserController::class, 'update_people']);
+    Route::put("/profile/edit", [UserController::class, 'update_profile']);
 });

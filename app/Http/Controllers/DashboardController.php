@@ -43,6 +43,8 @@ class DashboardController extends Controller
     }
     public function wellnessProfile()
     {
-        return inertia('wellnessProfile');
+        return inertia('wellnessProfile', [
+            'profile' => user()->profile
+        ]);
     }
 }
