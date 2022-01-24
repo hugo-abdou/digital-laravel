@@ -4,6 +4,12 @@ import { useForm, usePage } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import Button from "../components/Button";
 import Card from "../components/Card";
+import {
+    aerobic_strong,
+    endurance_strong,
+    flexibility_strong,
+    muscular_strong,
+} from "../components/Strong";
 import { classNames } from "../helpers";
 
 function MenuItems(props) {
@@ -110,7 +116,7 @@ function Card2(props) {
             <img src="/assets/weight-scale.png" />
             <div className="space-y-5 mt-5 font-semibold text-lg text-dark-gray">
                 <p>
-                    Gender : <span className="text-black">male</span>
+                    Gender :<span className="text-black">{profile.gender}</span>
                 </p>
                 <InputFeild
                     name="Weight : "
@@ -227,7 +233,12 @@ function Card4(props) {
                     value={
                         editable
                             ? data.aerobic_fitness || 0
-                            : data.aerobic_fitness + " (Strong)"
+                            : data.aerobic_fitness +
+                              aerobic_strong(
+                                  data.gender,
+                                  data.age,
+                                  data.aerobic_fitness
+                              )
                     }
                 />
 
@@ -240,7 +251,12 @@ function Card4(props) {
                     value={
                         editable
                             ? data.muscular_strength || 0
-                            : data.muscular_strength + " (Strong)"
+                            : data.muscular_strength +
+                              muscular_strong(
+                                  data.gender,
+                                  data.age,
+                                  data.muscular_strength
+                              )
                     }
                 />
                 <InputFeild
@@ -250,7 +266,12 @@ function Card4(props) {
                     value={
                         editable
                             ? data.endurnce || 0
-                            : data.endurnce + " (Strong)"
+                            : data.endurnce +
+                              endurance_strong(
+                                  data.gender,
+                                  data.age,
+                                  data.endurnce
+                              )
                     }
                 />
 
@@ -261,7 +282,12 @@ function Card4(props) {
                     value={
                         editable
                             ? data.flexibility || 0
-                            : data.flexibility + " (Strong)"
+                            : data.flexibility +
+                              flexibility_strong(
+                                  data.gender,
+                                  data.age,
+                                  data.flexibility
+                              )
                     }
                 />
                 {editable && (
