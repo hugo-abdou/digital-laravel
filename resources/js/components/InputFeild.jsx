@@ -14,6 +14,8 @@ export default function InputFeild(props) {
                 max={100}
                 placeholder={props.placeholder}
                 type={props.type || "number"}
+                min={0}
+                max={100}
                 onChange={props.handelChange}
                 value={props.value || ""}
                 className={classNames(

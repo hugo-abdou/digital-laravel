@@ -118,18 +118,10 @@ function HeadlessuiModal(props) {
                                                             className="w-full h-full"
                                                         />
                                                     </div>
-                                                    <input
-                                                        onChange={(e) =>
-                                                            setFormData(
-                                                                "name",
-                                                                item,
-                                                                e.target.value
-                                                            )
-                                                        }
-                                                        value={item.name}
-                                                        className="ml-2 text-black block font-semibold capitalize focus:ring-0 rounded-md border-gray-200"
-                                                        type="text"
-                                                    />
+
+                                                    <span className="inline-block ml-2 text-xl text-black font-semibold">
+                                                        {item.name}
+                                                    </span>
                                                 </div>
                                                 <input
                                                     onChange={(e) =>
@@ -202,7 +194,7 @@ export default function InfluenceManagement({ className }) {
             >
                 {influencers
                     .filter((item) => item.active)
-                    .map((item, i) => {
+                    .map((item, i, arr) => {
                         return (
                             <div key={item.id}>
                                 <div className="flex items-center p-1 mb-1">
@@ -219,9 +211,9 @@ export default function InfluenceManagement({ className }) {
                                     </div>
                                     <div className="w-2/3 pl-4">
                                         <p className="first-letter:text-2xl first-letter:text-d-yellow">
-                                            {i + 1} of the top five influencers
-                                            are in alignment with current goal
-                                            established
+                                            {arr.length} of the top five
+                                            influencers are in alignment with
+                                            current goal established
                                         </p>
                                     </div>
                                 </div>

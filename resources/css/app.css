@@ -1,10 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=Prompt:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=Prompt:wght@400;500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
-   @apply ring-0  border-d-yellow;
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+    @apply ring-0  border-d-yellow;
 }
 
 /* navbar transition */
@@ -20,13 +34,20 @@
 .float #navigation a:hover {
     /* @apply text-white; */
 }
-.float #navigation #actions a{
+.float #navigation #actions a {
     @apply hidden;
 }
-.float #navigation #burger{
+.float #navigation #burger {
     @apply block lg:hidden;
 }
 
 .float #navigation2 {
     @apply hidden;
+}
+
+.slick-dots li {
+    margin: 0 0 0 2px !important;
+}
+.slick-dots li:nth-child(9) {
+    margin: 0 0 0 15px !important;
 }

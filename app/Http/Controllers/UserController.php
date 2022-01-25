@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Influencer;
 use App\Models\OveralProgress;
 use App\Models\User;
 use Facades\App\Services\UserService;
@@ -83,7 +84,8 @@ class UserController extends Controller
     public function create_goal(Request $request)
     {
         $data =  $request->validate([
-            'goal' => 'required|string'
+            'goal' => 'required|string',
+            'name' => 'required|string',
         ]);
 
         UserService::create_goal($data);
@@ -107,6 +109,12 @@ class UserController extends Controller
             'influencers' => 'required|array'
         ]);
         UserService::update_influencer($data['influencers']);
+        return back(303);
+    }
+
+    public function delete_influencer(Influencer $influencer)
+    {
+        $influencer->delete();
         return back(303);
     }
     public function update_activities(Request $request)

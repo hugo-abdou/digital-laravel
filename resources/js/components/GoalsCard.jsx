@@ -11,12 +11,16 @@ import InputFeild from "./InputFeild";
 function Goals({ items, addGoal }) {
     const [editable, setEditable] = useState(false);
     let lastOne = null;
-    const { data, setData, post, processing, errors } = useForm({ goal: "" });
+    const { data, setData, post, processing, errors, reset } = useForm({
+        goal: "",
+        name: "",
+    });
 
     function handelSubmit() {
         post("/goal/create", {
             preserveScroll: true,
             onSuccess() {
+                reset();
                 setEditable(false);
             },
         });
@@ -30,10 +34,17 @@ function Goals({ items, addGoal }) {
             className="w-1/3"
         >
             {editable && (
-                <div className="my-4">
+                <div className="my-4 space-y-4">
+                    <InputFeild
+                        value={data.name}
+                        label={`Goal :`}
+                        type="text"
+                        className="w-1/2 "
+                        handelChange={(e) => setData("name", e.target.value)}
+                    />
                     <InputFeild
                         value={data.goal}
-                        label={`add Goal :`}
+                        label={`Pourcentage :`}
                         handelChange={(e) => setData("goal", e.target.value)}
                     />
                     <Button
@@ -53,7 +64,7 @@ function Goals({ items, addGoal }) {
                             className="flex items-center justify-between border-b-2 px-1 py-2"
                         >
                             <span className="font-medium text-lg text-black">
-                                Goal {lastOne && lastOne.pourcentage}
+                                {item.name}
                             </span>
                             <span className="flex items-center font-bold text-lg text-black">
                                 {item.pourcentage}%

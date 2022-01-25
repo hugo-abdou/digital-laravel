@@ -421,5 +421,21 @@ return [
 			'name' => 'p',
 			"description" => 'Tend to make decisions using logical analysis, objectively weigh pros and cons, and value honesty, consistency, and fairness'
 		],
+		[
+			'name' => 'd',
+			"description" => 'This style is both bold and skeptical. They typically dive into challenges produced by their environment and place a high priority on “winning.” They tend to be more receptive to logic, data and analysis than they are to somebody else’s “gut-level feel” or intuition. They pursue challenges in a dynamic, assertive and self-assured manner. They can also become easily irritated with opposing points of view which elicits a response that can be categorized as indifference, intolerance or hostility.'
+		],
+		[
+			'name' => 'i',
+			"description" => 'This style is both bold and accepting. They are “people oriented” and are motivated by their connections with others. They tend to welcome others in a warm and inviting manner that encourages collaboration and generates excitement. They pursue environmental challenges in an outgoing, enthusiastic and optimistic manner. They are also prone to “keep people happy” and as a result may be reluctant to provide others with constructive feedback or pay adequate attention to follow-through or attention to detail.'
+		],
+		[
+			'name' => 's',
+			"description" => 'This style is both cautious and accepting. They are highly motivated to help others and maintain the stability of their environment. They excel at cooperation and are routinely described as “calm” or “patient.” They respond to the challenges of their environment in a thoughtful and comparatively methodical manner routinely providing others with empathy and support. They tend to struggle with change that disrupts their routine and can be shocked, stunned or temporarily dazed by its emergence.'
+		],
+		[
+			'name' => 'c',
+			"description" => 'This style is both cautious and skeptical. They can best be described as “detail oriented” and have a strong preference for an environment defined by its stability. They enjoy opportunities to demonstrate their expertise and share the quality of their work. They are driven by logic and objective analysis. As such, they will typically respond to disruptions in their routine by openly questioning the feasibility and viability of the proposed path forward. They tend to “overanalyze” but when they reach a level of comfort, they can serve as a calming source of objective support.'
+		],
 	]
 ];

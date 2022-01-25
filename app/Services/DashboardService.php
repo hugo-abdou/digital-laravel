@@ -84,6 +84,9 @@ class DashboardService extends Facade
     }
     public function get_wellness()
     {
+        if (!user()->wellness()->count()) {
+            user()->wellness()->create([]);
+        }
         return  user()->wellness;
     }
     public function get_influencers($active = null)

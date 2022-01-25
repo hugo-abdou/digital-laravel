@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/goal/create', [UserController::class, 'create_goal']);
     Route::post("/influencer/create", [UserController::class, 'create_influencer']);
     Route::put("/influencers/update", [UserController::class, 'update_influencer']);
+    Route::delete("/influencer/{influencer}", [UserController::class, 'delete_influencer']);
     Route::put("/activities/update", [UserController::class, 'update_activities']);
     Route::put("/people/update", [UserController::class, 'update_people']);
     Route::put("/profile/edit", [UserController::class, 'update_profile']);

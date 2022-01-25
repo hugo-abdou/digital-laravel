@@ -22,13 +22,13 @@ export default function Indicators() {
                 className="mb-5"
                 customPaging={(i) => {
                     return (
-                        <div>
+                        <div className="!mx-0">
                             <span
                                 className={classNames(
                                     i == selectedIndicator
                                         ? "bg-d-yellow text-white"
                                         : "bg-gray-300 text-black",
-                                    "rounded-full  w-6 h-6 font-semibold inline-block"
+                                    "rounded-full uppercase w-4 h-4 text-xs font-semibold inline-block"
                                 )}
                                 onClick={() => setIndicator(i)}
                             >

@@ -82,6 +82,22 @@ export default function Disc() {
                 return item;
             })
         );
+        setData(
+            "discs",
+            discs.map((item) => {
+                if (item.id == disc.id) {
+                    let total =
+                        parseInt(disc.d) +
+                        parseInt(disc.di) +
+                        parseInt(disc.dc);
+
+                    disc.error = total > 100;
+
+                    return disc;
+                }
+                return item;
+            })
+        );
     }
 
     function handelSubmit() {
@@ -96,7 +112,7 @@ export default function Disc() {
     return (
         <Card
             MenuItems={<MenuItems handelClick={() => setEditable(true)} />}
-            title="Disc"
+            title="DISC"
             className={classNames("col-span-2", editable && "row-span-2")}
         >
             <div className="flex justify-around pb-5">
@@ -106,12 +122,12 @@ export default function Disc() {
             </div>
             {editable && (
                 <>
-                    <div className="flex justify-around mt-20">
+                    <div className="grid grid-cols-4 mt-20">
                         {data.discs.map((disc) => {
                             return (
                                 <div key={disc.id} className="space-y-4 px-4">
                                     <InputFeild
-                                        className="w-20"
+                                        className="w-20 "
                                         value={disc.pourcentage}
                                         handelChange={(e) =>
                                             setFormData(
@@ -123,7 +139,10 @@ export default function Disc() {
                                         label={`${disc.name} :`}
                                     />
                                     <InputFeild
-                                        className="w-20"
+                                        className={classNames(
+                                            "w-20",
+                                            disc.error ? "!border-red-400" : ""
+                                        )}
                                         value={disc.d}
                                         handelChange={(e) =>
                                             setFormData(
@@ -135,7 +154,10 @@ export default function Disc() {
                                         label="D :"
                                     />
                                     <InputFeild
-                                        className="w-20"
+                                        className={classNames(
+                                            "w-20",
+                                            disc.error ? "!border-red-400" : ""
+                                        )}
                                         value={disc.di}
                                         handelChange={(e) =>
                                             setFormData(
@@ -147,7 +169,10 @@ export default function Disc() {
                                         label="DI :"
                                     />
                                     <InputFeild
-                                        className="w-20"
+                                        className={classNames(
+                                            "w-20",
+                                            disc.error ? "!border-red-400" : ""
+                                        )}
                                         value={disc.dc}
                                         handelChange={(e) =>
                                             setFormData(
@@ -158,6 +183,12 @@ export default function Disc() {
                                         }
                                         label="DC :"
                                     />
+                                    {disc.error && (
+                                        <span className="text-xs text-red-500">
+                                            total of DC, DI, D must be exacly
+                                            100%
+                                        </span>
+                                    )}
                                 </div>
                             );
                         })}

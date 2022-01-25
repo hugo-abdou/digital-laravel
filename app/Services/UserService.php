@@ -52,6 +52,7 @@ class UserService extends Facade
         }
         user()->goals()->create([
             'pourcentage' => $data['goal'],
+            'name' => $data['name'],
             'up' =>  $isGreaterThanLastRecord
         ]);
     }

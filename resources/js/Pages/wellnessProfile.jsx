@@ -1,5 +1,5 @@
 import { Menu } from "@headlessui/react";
-import { UserAddIcon } from "@heroicons/react/solid";
+import { PencilAltIcon, UserAddIcon } from "@heroicons/react/solid";
 import { useForm, usePage } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import Button from "../components/Button";
@@ -23,11 +23,11 @@ function MenuItems(props) {
                         "flex px-4 py-2 text-sm w-full"
                     )}
                 >
-                    <UserAddIcon
+                    <PencilAltIcon
                         className="mr-3 h-5 w-5 text-gray-400"
                         aria-hidden="true"
                     />
-                    <span>Add Influencer</span>
+                    <span>Fill Data</span>
                 </button>
             )}
         </Menu.Item>

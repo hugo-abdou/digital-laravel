@@ -1,5 +1,6 @@
 import { Menu } from "@headlessui/react";
-import { UserAddIcon } from "@heroicons/react/solid";
+import { UserAddIcon, XIcon } from "@heroicons/react/solid";
+import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import { classNames } from "../helpers";
@@ -54,11 +55,25 @@ export default function Influencers() {
                     {influencers.map((item) => {
                         return (
                             <div key={item.id}>
-                                <div className="rounded-full overflow-hidden shadow-md ring ring-d-yellow">
+                                <div className="rounded-full group relative overflow-hidden shadow-md ring ring-d-yellow">
                                     <img
                                         src="/assets/avatar101.jpg"
                                         className="w-full h-full"
                                     />
+                                    <div
+                                        data-id={item.id}
+                                        onClick={() =>
+                                            confirm(
+                                                "are you sur you whant to delele this influencer"
+                                            ) &&
+                                            Inertia.delete(
+                                                `/influencer/${item.id}`
+                                            )
+                                        }
+                                        className="absolute inset-0 cursor-pointer p-5 bg-red-500 hidden group-hover:block"
+                                    >
+                                        <XIcon className="text-white" />
+                                    </div>
                                 </div>
                                 <span className="mt-2 text-black block font-semibold capitalize">
                                     {item.name}

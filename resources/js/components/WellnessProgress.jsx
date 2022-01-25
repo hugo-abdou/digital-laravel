@@ -20,6 +20,8 @@ function InputFeild(props) {
             <span>{props.name}</span>
             <input
                 type="number"
+                min={0}
+                max={100}
                 onChange={props.handelChange}
                 value={props.value || 0}
                 className="py-0 mt-2 w-24 rounded border-gray-400"
@@ -95,7 +97,11 @@ export default function WellnessProgress() {
                         <div className="text-center">
                             <InputFeild
                                 handelChange={(e) =>
-                                    setData("activity", e.target.value)
+                                    setData({
+                                        activity: e.target.value,
+                                        inactivity:
+                                            100 - parseInt(e.target.value),
+                                    })
                                 }
                                 editable={editable}
                                 name="activity"
@@ -108,7 +114,11 @@ export default function WellnessProgress() {
                         <div className="text-center">
                             <InputFeild
                                 handelChange={(e) =>
-                                    setData("inactivity", e.target.value)
+                                    setData({
+                                        inactivity: e.target.value,
+                                        activity:
+                                            100 - parseInt(e.target.value),
+                                    })
                                 }
                                 editable={editable}
                                 name="inactivity"

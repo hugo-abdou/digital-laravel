@@ -17,6 +17,7 @@ class CreateGoalsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('pourcentage')->default(0);
+            $table->string('name')->nullable();
             $table->boolean('up')->default(0);
             $table->timestamps();
         });

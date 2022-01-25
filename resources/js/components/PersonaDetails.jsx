@@ -116,7 +116,7 @@ export default function PersonaDetails({ className }) {
                                 }
                                 value={data.gender}
                             >
-                                <option></option>
+                                <option value=""></option>
                                 <option>Male</option>
                                 <option>Female</option>
                                 <option>Other</option>
@@ -137,7 +137,7 @@ export default function PersonaDetails({ className }) {
                                 }
                                 value={data.occupation || ""}
                             >
-                                <option></option>
+                                <option value=""></option>
                                 <option>Management Occupations</option>
                                 <option>
                                     Business and Financial Operations
@@ -218,7 +218,7 @@ export default function PersonaDetails({ className }) {
                                 }
                                 value={data.ethnicity || ""}
                             >
-                                <option></option>
+                                <option value=""></option>
                                 <option>
                                     American Indian or Alaska Native
                                 </option>
@@ -245,7 +245,7 @@ export default function PersonaDetails({ className }) {
                                 }
                                 value={data.marital_status || ""}
                             >
-                                <option></option>
+                                <option value=""></option>
                                 <option>Single</option>
                                 <option>Married</option>
                                 <option>Divorced</option>
@@ -265,7 +265,7 @@ export default function PersonaDetails({ className }) {
                                 }
                                 value={data.income_level || ""}
                             >
-                                <option></option>
+                                <option value=""></option>
                                 <option>Lower – $32,048 or less</option>
                                 <option>
                                     Lower-Middle Class – $32,048 - $53,413
@@ -293,7 +293,7 @@ export default function PersonaDetails({ className }) {
                                 }
                                 value={data.education_level || ""}
                             >
-                                <option></option>
+                                <option value=""></option>
                                 <option>High School / GED</option>
                                 <option>Some College</option>
                                 <option>Associate Degree</option>
