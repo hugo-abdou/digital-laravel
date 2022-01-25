@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Mail\WelcomeMail;
+use App\Notifications\PasswordReset;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -20,6 +21,10 @@ class User extends Authenticatable
             $model->profile()->create([]);
             Mail::to($model->email)->send(new WelcomeMail());
         });
+    }
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordReset($token));
     }
 
     /**

@@ -4,7 +4,12 @@
             email verification,
         </div>
     </x-slot>
-    <form method="post" action="/login" class="grid grid-cols-6 gap-x-10 gap-y-7">
+    @if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+    @else
+    <form method="post" action="/forget-password" class="grid grid-cols-6 gap-x-10 gap-y-7">
         @csrf
         <label for="E-mail" class="block col-span-4">
             <span class="text-p-sm">E-mail Address</span>
@@ -17,4 +22,5 @@
                 class="font-semibold bg-d-yellow text-white text-p-xs md:text-p-sm rounded-full mt-8 px-16 py-3">submit</button>
         </div>
     </form>
+    @endif
 </x-auth-layout>

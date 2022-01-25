@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -26,7 +27,6 @@ Route::post('/contact-us', function (Request $request) {
 Route::middleware('guest')->group(function () {
 
     Route::view('/login', 'auth.login')->name('login');
-    Route::view('/forget-password', 'auth.forget-password');
 
     Route::get('/register', function (Request $request) {
         if (!$request->has('user_type')) return view('auth.sing-up');
@@ -35,6 +35,11 @@ Route::middleware('guest')->group(function () {
             'request' => $request
         ]);
     });
+
+    Route::get('/forget-password', [AuthController::class, 'forgetPassword']);
+    Route::post('/forget-password', [AuthController::class, 'post_forgetPassword']);
+    Route::get('/password/reset/{token}', [AuthController::class, 'restPassword']);
+    Route::post('/password/reset', [AuthController::class, 'submitResetPasswordForm']);
 });
 
 Route::view('/payment', 'payment');
