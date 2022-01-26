@@ -11,7 +11,6 @@ export default function InputFeild(props) {
             )}
 
             <input
-                max={100}
                 placeholder={props.placeholder}
                 type={props.type || "number"}
                 min={0}

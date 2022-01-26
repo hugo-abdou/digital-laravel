@@ -177,19 +177,6 @@ function Card3(props) {
                     editable={editable}
                     value={editable ? data.legs || 0 : data.legs + " Inches"}
                 />
-                <InputFeild
-                    name="Body Fat :"
-                    onChange={(e) => setData("body_fat", e.target.value)}
-                    editable={editable}
-                    value={editable ? data.body_fat || 0 : data.body_fat + "%"}
-                />
-                <InputFeild
-                    name="Target Body Fat :"
-                    onChange={(e) => setData("target_body_fat", e.target.value)}
-                    editable={editable}
-                    type="text"
-                    value={data.target_body_fat || ""}
-                />
 
                 {editable && (
                     <Button
@@ -302,6 +289,49 @@ function Card4(props) {
     );
 }
 
+function Card5(props) {
+    const [editable, setEditable] = useState(false);
+    const { profile } = usePage().props;
+    const { data, setData, put, processing, errors, reset } = useForm(profile);
+
+    function handelSubmit() {
+        put("/profile/edit", {
+            preserveScroll: true,
+            onSuccess() {
+                setEditable(false);
+            },
+        });
+    }
+    return (
+        <Card MenuItems={<MenuItems handelClick={() => setEditable(true)} />}>
+            <img src="/assets/fitness.png" />
+            <div className="space-y-5 mt-5 font-semibold text-lg text-dark-gray">
+                <InputFeild
+                    name="Body Fat :"
+                    onChange={(e) => setData("body_fat", e.target.value)}
+                    editable={editable}
+                    value={editable ? data.body_fat || 0 : data.body_fat + "%"}
+                />
+                <InputFeild
+                    name="Target Body Fat :"
+                    onChange={(e) => setData("target_body_fat", e.target.value)}
+                    editable={editable}
+                    type="text"
+                    value={data.target_body_fat || ""}
+                />
+
+                {editable && (
+                    <Button
+                        className="w-full"
+                        processing={processing}
+                        onClick={handelSubmit}
+                    />
+                )}
+            </div>
+        </Card>
+    );
+}
+
 export default function wellnessProfile() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row-dense gap-4 px-4">
@@ -309,6 +339,7 @@ export default function wellnessProfile() {
             <Card2 />
             <Card3 />
             <Card4 />
+            <Card5 />
         </div>
     );
 }

@@ -20,10 +20,8 @@ function InputFeild(props) {
             <span>{props.name}</span>
             <input
                 type="number"
-                min={0}
-                max={100}
                 onChange={props.handelChange}
-                value={props.value || 0}
+                value={props.value}
                 className="py-0 mt-2 w-24 rounded border-gray-400"
             />
             {props.error && (
@@ -96,13 +94,14 @@ export default function WellnessProgress() {
                         <span className="w-8 h-3 block bg-[#FC53B8]"></span>
                         <div className="text-center">
                             <InputFeild
-                                handelChange={(e) =>
-                                    setData({
-                                        activity: e.target.value,
-                                        inactivity:
-                                            100 - parseInt(e.target.value),
-                                    })
-                                }
+                                handelChange={({ target: { value } }) => {
+                                    if (value <= 100 && value >= 0) {
+                                        setData({
+                                            activity: value,
+                                            inactivity: 100 - parseInt(value),
+                                        });
+                                    }
+                                }}
                                 editable={editable}
                                 name="activity"
                                 value={data.activity}
@@ -113,13 +112,14 @@ export default function WellnessProgress() {
                         <span className="w-8 h-3 block bg-[#1D83FA]"></span>
                         <div className="text-center">
                             <InputFeild
-                                handelChange={(e) =>
-                                    setData({
-                                        inactivity: e.target.value,
-                                        activity:
-                                            100 - parseInt(e.target.value),
-                                    })
-                                }
+                                handelChange={({ target: { value } }) => {
+                                    if (value <= 100 && value >= 0) {
+                                        setData({
+                                            inactivity: value,
+                                            activity: 100 - parseInt(value),
+                                        });
+                                    }
+                                }}
                                 editable={editable}
                                 name="inactivity"
                                 value={data.inactivity}

@@ -17,7 +17,7 @@ export default function Indicators() {
     const [selectedIndicator, setIndicator] = useState(0);
     const { indicators } = usePage().props;
     return (
-        <Card title="Indicators">
+        <Card className="indicators" title="Indicators">
             <Slider
                 className="mb-5"
                 customPaging={(i) => {

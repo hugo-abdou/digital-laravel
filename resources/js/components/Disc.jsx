@@ -91,7 +91,13 @@ export default function Disc() {
                         parseInt(disc.di) +
                         parseInt(disc.dc);
 
-                    disc.error = total > 100;
+                    if (total !== 100) {
+                        errors.discs = true;
+                        disc.error = true;
+                    } else {
+                        errors.discs = false;
+                        disc.error = false;
+                    }
 
                     return disc;
                 }
@@ -101,12 +107,14 @@ export default function Disc() {
     }
 
     function handelSubmit() {
-        put("/discs/update", {
-            preserveScroll: true,
-            onSuccess() {
-                setEditable(false);
-            },
-        });
+        if (!errors.discs) {
+            put("/discs/update", {
+                preserveScroll: true,
+                onSuccess() {
+                    setEditable(false);
+                },
+            });
+        }
     }
 
     return (
@@ -129,13 +137,17 @@ export default function Disc() {
                                     <InputFeild
                                         className="w-20 "
                                         value={disc.pourcentage}
-                                        handelChange={(e) =>
-                                            setFormData(
-                                                "pourcentage",
-                                                disc,
-                                                e.target.value
-                                            )
-                                        }
+                                        handelChange={({
+                                            target: { value },
+                                        }) => {
+                                            if (value <= 100 && value >= 0) {
+                                                setFormData(
+                                                    "pourcentage",
+                                                    disc,
+                                                    value
+                                                );
+                                            }
+                                        }}
                                         label={`${disc.name} :`}
                                     />
                                     <InputFeild
@@ -144,13 +156,13 @@ export default function Disc() {
                                             disc.error ? "!border-red-400" : ""
                                         )}
                                         value={disc.d}
-                                        handelChange={(e) =>
-                                            setFormData(
-                                                "d",
-                                                disc,
-                                                e.target.value
-                                            )
-                                        }
+                                        handelChange={({
+                                            target: { value },
+                                        }) => {
+                                            if (value <= 100 && value >= 0) {
+                                                setFormData("d", disc, value);
+                                            }
+                                        }}
                                         label="D :"
                                     />
                                     <InputFeild
@@ -159,13 +171,13 @@ export default function Disc() {
                                             disc.error ? "!border-red-400" : ""
                                         )}
                                         value={disc.di}
-                                        handelChange={(e) =>
-                                            setFormData(
-                                                "di",
-                                                disc,
-                                                e.target.value
-                                            )
-                                        }
+                                        handelChange={({
+                                            target: { value },
+                                        }) => {
+                                            if (value <= 100 && value >= 0) {
+                                                setFormData("di", disc, value);
+                                            }
+                                        }}
                                         label="DI :"
                                     />
                                     <InputFeild
@@ -174,13 +186,13 @@ export default function Disc() {
                                             disc.error ? "!border-red-400" : ""
                                         )}
                                         value={disc.dc}
-                                        handelChange={(e) =>
-                                            setFormData(
-                                                "dc",
-                                                disc,
-                                                e.target.value
-                                            )
-                                        }
+                                        handelChange={({
+                                            target: { value },
+                                        }) => {
+                                            if (value <= 100 && value >= 0) {
+                                                setFormData("dc", disc, value);
+                                            }
+                                        }}
                                         label="DC :"
                                     />
                                     {disc.error && (

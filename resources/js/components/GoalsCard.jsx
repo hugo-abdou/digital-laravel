@@ -45,7 +45,11 @@ function Goals({ items, addGoal }) {
                     <InputFeild
                         value={data.goal}
                         label={`Pourcentage :`}
-                        handelChange={(e) => setData("goal", e.target.value)}
+                        handelChange={({ target: { value } }) => {
+                            if (value <= 100 && value >= 0) {
+                                setData("goal", value);
+                            }
+                        }}
                     />
                     <Button
                         text="Save"

@@ -192,9 +192,13 @@ export default function PersonalityResult({ title }) {
                                         key={name}
                                         value={data[name] || 0}
                                         label={`${name} :`}
-                                        handelChange={(e) =>
-                                            setData(name, e.target.value)
-                                        }
+                                        handelChange={({
+                                            target: { value },
+                                        }) => {
+                                            if (value <= 100 && value >= 0) {
+                                                setData(name, value);
+                                            }
+                                        }}
                                     />
                                 );
                             })}

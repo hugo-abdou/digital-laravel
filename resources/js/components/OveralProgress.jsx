@@ -157,7 +157,11 @@ export default function OveralProgress({ className }) {
                     name="Wellness"
                     editable={editable}
                     error={errors.wellness}
-                    handelChange={(e) => setData("wellness", e.target.value)}
+                    handelChange={({ target: { value } }) => {
+                        if (value <= 100 && value >= 0) {
+                            setData("wellness", value);
+                        }
+                    }}
                     value={data.wellness}
                 />
             </div>
