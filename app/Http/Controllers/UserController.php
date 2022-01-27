@@ -24,10 +24,6 @@ class UserController extends Controller
             "background" => "sometimes|string",
         ]);
         $user->update($data);
-        $user->profile()->update([
-            'age' => $data['age'],
-            'gender' => $data['gender'],
-        ]);
         return back(303);
     }
 

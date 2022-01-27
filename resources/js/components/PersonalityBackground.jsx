@@ -76,6 +76,7 @@ export default function PersonalityBackground() {
                     />
                 ) : (
                     <div
+                        className="whitespace-pre-wrap"
                         dangerouslySetInnerHTML={{
                             __html: auth.user.background,
                         }}

@@ -21,6 +21,13 @@ class User extends Authenticatable
             $model->profile()->create([]);
             Mail::to($model->email)->send(new WelcomeMail());
         });
+
+        static::updated(function ($model) {
+            $model->profile()->update([
+                'age' => $model->age,
+                'gender' => $model->gender,
+            ]);
+        });
     }
     public function sendPasswordResetNotification($token)
     {

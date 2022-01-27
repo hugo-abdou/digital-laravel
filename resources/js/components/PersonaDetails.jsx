@@ -114,7 +114,7 @@ export default function PersonaDetails({ className }) {
                                 handelChange={(e) =>
                                     setData("gender", e.target.value)
                                 }
-                                value={data.gender}
+                                value={data.gender || ""}
                             >
                                 <option value=""></option>
                                 <option>Male</option>

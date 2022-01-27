@@ -19,7 +19,7 @@
                 class="w-full border border-gray-300 @error('password') !border-red-500 @enderror p-3 mt-2">
             @error('password') <span class="text-red-500">{{$message}}</span> @enderror
         </label>
-        <a href="http://digital-laravel.test/forget-password" class="col-span-6 text-dark-gray">forget password</a>
+        <a href="/forget-password" class="col-span-6 text-dark-gray">forget password</a>
         <div class="col-span-6">
             <button type="submit"
                 class="font-semibold bg-d-yellow text-white text-p-xs md:text-p-sm rounded-full mt-8 px-16 py-3">login</button>
