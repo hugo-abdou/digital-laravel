@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Activity;
 use App\Models\Disc;
 use App\Models\Goal;
 use App\Models\Indicator;
@@ -86,12 +87,24 @@ class UserService extends Facade
         });
     }
 
+    public function create_activities($data)
+    {
+        user()->activities()->create([
+            "type" => 'activity',
+            "name" => $data['name'],
+            "value" => $data['value'],
+        ]);
+    }
     public function update_activities($data)
     {
-        user()->activities()->update($data);
+        collect($data)->each(function ($activity) {
+            Activity::where('id', $activity['id'])->first()->update([
+                'value' => $activity['value']
+            ]);
+        });
     }
     public function update_people($data)
     {
-        user()->people()->update($data);
+        // user()->people()->update($data);
     }
 }

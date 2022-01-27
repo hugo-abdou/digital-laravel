@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::put("/influencers/update", [UserController::class, 'update_influencer']);
     Route::delete("/influencer/{influencer}", [UserController::class, 'delete_influencer']);
     Route::put("/activities/update", [UserController::class, 'update_activities']);
+    Route::post("activities/create", [UserController::class, 'create_activities']);
+    Route::delete("activities/{activity}/delete", [UserController::class, 'delete_activities']);
     Route::put("/people/update", [UserController::class, 'update_people']);
     Route::put("/profile/edit", [UserController::class, 'update_profile']);
 });

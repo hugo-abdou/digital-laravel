@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\Influencer;
 use App\Models\OveralProgress;
 use App\Models\User;
@@ -115,17 +116,21 @@ class UserController extends Controller
     }
     public function update_activities(Request $request)
     {
+        UserService::update_activities($request->all());
+        return back(303);
+    }
+    public function create_activities(Request $request)
+    {
         $data = $request->validate([
-            "work" => "required|string",
-            "eating" => "required|string",
-            "sleep" => "required|string",
-            "driving" => "required|string",
-            "networking" => "required|string",
-            "materila_art" => "required|string",
-            "meetings" => "required|string",
-            "family_actv" => "required|string",
+            "name" => "required|string",
+            "value" => "required|string",
         ]);
-        UserService::update_activities($data);
+        UserService::create_activities($data);
+        return back(303);
+    }
+    public function delete_activities(Activity $activity)
+    {
+        $activity->delete();
         return back(303);
     }
     public function update_people(Request $request)

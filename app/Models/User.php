@@ -90,11 +90,7 @@ class User extends Authenticatable
     }
     public function activities()
     {
-        return $this->hasOne(Activity::class);
-    }
-    public function people()
-    {
-        return $this->hasOne(People::class);
+        return $this->hasMany(Activity::class);
     }
     public function profile()
     {

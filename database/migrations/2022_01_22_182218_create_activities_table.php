@@ -16,14 +16,9 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('work')->default(1);
-            $table->string('eating')->default(0);
-            $table->string('sleep')->default(0);
-            $table->string('driving')->default(0);
-            $table->string('networking')->default(0);
-            $table->string('materila_art')->default(0);
-            $table->string('meetings')->default(0);
-            $table->string('family_actv')->default(0);
+            $table->string('type')->nullable();
+            $table->string('name')->nullable();
+            $table->string('value')->nullable();
             $table->timestamps();
         });
     }
