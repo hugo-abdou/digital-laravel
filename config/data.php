@@ -437,5 +437,12 @@ return [
 			'name' => 'c',
 			"description" => 'This style is both cautious and skeptical. They can best be described as “detail oriented” and have a strong preference for an environment defined by its stability. They enjoy opportunities to demonstrate their expertise and share the quality of their work. They are driven by logic and objective analysis. As such, they will typically respond to disruptions in their routine by openly questioning the feasibility and viability of the proposed path forward. They tend to “overanalyze” but when they reach a level of comfort, they can serve as a calming source of objective support.'
 		],
-	]
+	],
+	'hrs' => [
+		'10%' => 0,
+		'20%' => 0,
+		'50%' => 0,
+		'75%' => 0,
+		'90%' => 0,
+	],
 ];

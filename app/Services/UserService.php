@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Activity;
 use App\Models\Disc;
 use App\Models\Goal;
+use App\Models\Hr;
 use App\Models\Indicator;
 use App\Models\Influencer;
 use App\Models\Personality;
@@ -116,6 +117,14 @@ class UserService extends Facade
         collect($data)->each(function ($activity) {
             Activity::where('id', $activity['id'])->first()->update([
                 'value' => $activity['value']
+            ]);
+        });
+    }
+    public function update_hrs($data)
+    {
+        collect($data)->each(function ($hr) {
+            Hr::where('id', $hr['id'])->first()->update([
+                'value' => $hr['value']
             ]);
         });
     }

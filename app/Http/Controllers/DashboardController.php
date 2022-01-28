@@ -39,6 +39,7 @@ class DashboardController extends Controller
             "influencers" => fn () => DashboardService::get_influencers(),
             "activities" => fn () => DashboardService::get_activities(),
             "people" => fn () => DashboardService::get_people(),
+            "hrs" => fn () => DashboardService::get_hrs(),
         ]);
     }
     public function wellnessProfile()

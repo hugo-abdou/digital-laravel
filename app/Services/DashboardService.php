@@ -101,4 +101,14 @@ class DashboardService extends Facade
     {
         return user()->people()->count() ? user()->people : [];
     }
+    public function get_hrs()
+    {
+        if (!user()->hrs()->count()) {
+            collect(config('data.hrs'))->each(fn ($value, $key) => user()->hrs()->create([
+                'pourcentage' => $key,
+                'value' => $value
+            ]));
+        }
+        return user()->hrs;
+    }
 }

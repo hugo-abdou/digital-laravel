@@ -177,4 +177,9 @@ class UserController extends Controller
 
         return back(303);
     }
+    public function update_hrs(Request $request)
+    {
+        UserService::update_hrs($request->all());
+        return back(303);
+    }
 }

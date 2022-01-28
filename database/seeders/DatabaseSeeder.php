@@ -18,11 +18,8 @@ class DatabaseSeeder extends Seeder
         // create the first user to get access to dashboard
         \App\Models\User::factory(1)->create();
 
-        // get the domy data from data.php file
-        $data = require('database/seeders/data.php');
+        collect(config('data.indicators'))->each(fn ($item) => Indicator::create($item));
 
-        collect($data['indicators'])->each(fn ($item) => Indicator::create($item));
-
-        collect($data['personalities'])->each(fn ($item) => Personality::create($item));
+        collect(config('data.personalities'))->each(fn ($item) => Personality::create($item));
     }
 }

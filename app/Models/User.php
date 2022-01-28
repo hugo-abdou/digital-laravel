@@ -100,4 +100,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
+    public function hrs()
+    {
+        return $this->hasMany(Hr::class);
+    }
 }

@@ -41,5 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::post("people/create", [UserController::class, 'create_people']);
     Route::delete("people/{people}/delete", [UserController::class, 'delete_people']);
 
+    Route::put("hrs/update", [UserController::class, 'update_hrs']);
+
     Route::put("/profile/edit", [UserController::class, 'update_profile']);
 });
