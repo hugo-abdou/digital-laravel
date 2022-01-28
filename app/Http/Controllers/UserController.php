@@ -135,18 +135,24 @@ class UserController extends Controller
     }
     public function update_people(Request $request)
     {
-        $data = $request->validate([
-            "hasband" => "required|string",
-            "chidlrens" => "required|string",
-            "gloria" => "required|string",
-            "self_working" => "required|string",
-            "self" => "required|string",
-            "boutique_owner" => "required|string",
-            "other" => "required|string",
-        ]);
-        UserService::update_people($data);
+        UserService::update_people($request->all());
         return back(303);
     }
+    public function create_people(Request $request)
+    {
+        $data = $request->validate([
+            "name" => "required|string",
+            "value" => "required|string",
+        ]);
+        UserService::create_people($data);
+        return back(303);
+    }
+    public function delete_people(Activity $people)
+    {
+        $people->delete();
+        return back(303);
+    }
+
 
     public function update_profile(Request $request)
     {

@@ -86,7 +86,6 @@ class UserService extends Facade
             }
         });
     }
-
     public function create_activities($data)
     {
         user()->activities()->create([
@@ -103,8 +102,21 @@ class UserService extends Facade
             ]);
         });
     }
+
+    public function create_people($data)
+    {
+        user()->people()->create([
+            "type" => 'people',
+            "name" => $data['name'],
+            "value" => $data['value'],
+        ]);
+    }
     public function update_people($data)
     {
-        // user()->people()->update($data);
+        collect($data)->each(function ($activity) {
+            Activity::where('id', $activity['id'])->first()->update([
+                'value' => $activity['value']
+            ]);
+        });
     }
 }

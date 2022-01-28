@@ -95,21 +95,10 @@ class DashboardService extends Facade
     }
     public function get_activities()
     {
-        return user()->activities;
-        // if (user()->activities()->count()) {
-        //     return user()->activities;
-        // } else {
-        //     user()->activities()->create([]);
-        //     return user()->activities;
-        // }
+        return user()->activities()->count() ? user()->activities : [];
     }
     public function get_people()
     {
-        // if (user()->people()->count()) {
-        //     return  user()->people;
-        // } else {
-        //     user()->people()->create([]);
-        //     return  user()->people;
-        // }
+        return user()->people()->count() ? user()->people : [];
     }
 }
