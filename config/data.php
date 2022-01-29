@@ -439,6 +439,8 @@ return [
 		],
 	],
 	'hrs' => [
+		'job' => "Electrical Enginee",
+		'city' => "Texas City ,Tx",
 		'10%' => 0,
 		'20%' => 0,
 		'50%' => 0,

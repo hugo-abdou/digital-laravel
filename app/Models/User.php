@@ -23,10 +23,12 @@ class User extends Authenticatable
         });
 
         static::updated(function ($model) {
-            $model->profile()->update([
-                'age' => $model->age,
-                'gender' => $model->gender,
-            ]);
+            if (!$model->isClean('age') && !$model->isClean('gender')) {
+                $model->profile()->update([
+                    'age' => $model->age,
+                    'gender' => $model->gender,
+                ]);
+            }
         });
     }
     public function sendPasswordResetNotification($token)

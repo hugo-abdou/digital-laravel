@@ -16,7 +16,7 @@ class CreateHrsTable extends Migration
         Schema::create('hrs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('pourcentage')->nullable();
+            $table->string('key')->nullable();
             $table->string('value')->nullable();
             $table->timestamps();
         });

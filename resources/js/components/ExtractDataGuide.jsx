@@ -48,30 +48,13 @@ function Graphs(props) {
     return (
         <>
             <div className="flex-1 text-black">
-                <h4>
-                    <span className="font-bold text-lg ">
-                        Electrical Enginee
-                    </span>
-                    <span className="ml-2">in Texas city, Tx</span>
-                    <span className="underline block">
-                        Guide tBased on HR-reported data: a national average
-                        with a geographic differential
-                    </span>
-                    <span className="font-medium">Paid Annually</span>
-                </h4>
-            </div>
-            <div className="h-80 relative ">
-                <img
-                    src="/assets/guid-graph.jpeg"
-                    className="absolute bottom-4 w-full"
-                    alt=""
-                />
-                <div className="relative text-center flex w-full top-16">
-                    <div className=" w-1/6 ml-2">
-                        <span className="block">10%</span>
+                <h4 className="flex items-center">
+                    <span className="font-bold text-lg mr-2">
                         {props.editAble ? (
                             <InputFeild
                                 value={data[0].value}
+                                type="text"
+                                placeholder="Jobe"
                                 handelChange={({ target: { value } }) =>
                                     setData(
                                         data.map((item, index) => {
@@ -84,14 +67,17 @@ function Graphs(props) {
                                 }
                             />
                         ) : (
-                            <span>${props.hrs[0].value}</span>
+                            <span>{props.hrs[0].value}</span>
                         )}
-                    </div>
-                    <div className=" w-1/6">
-                        <span className="block">20%</span>
+                    </span>
+                    in
+                    <span className="ml-2 ">
                         {props.editAble ? (
                             <InputFeild
                                 value={data[1].value}
+                                placeholder="City"
+                                type="text"
+                                className=" inline-block"
                                 handelChange={({ target: { value } }) =>
                                     setData(
                                         data.map((item, index) => {
@@ -104,11 +90,25 @@ function Graphs(props) {
                                 }
                             />
                         ) : (
-                            <span>${props.hrs[1].value}</span>
+                            <>{props.hrs[1].value}</>
                         )}
-                    </div>
-                    <div className=" w-1/6 ml-14 font-semibold ">
-                        <span className="block">50%(Median)</span>
+                    </span>
+                </h4>
+                <span className="underline block">
+                    Based on HR-reported data: a national average with a
+                    geographic differential
+                </span>
+                <span className="font-medium">Paid Annually</span>
+            </div>
+            <div className="h-80 relative ">
+                <img
+                    src="/assets/guid-graph.jpeg"
+                    className="absolute bottom-4 w-full"
+                    alt=""
+                />
+                <div className="relative text-center flex w-full top-16">
+                    <div className=" w-1/6 ml-2">
+                        <span className="block">10%</span>
                         {props.editAble ? (
                             <InputFeild
                                 value={data[2].value}
@@ -127,8 +127,8 @@ function Graphs(props) {
                             <span>${props.hrs[2].value}</span>
                         )}
                     </div>
-                    <div className=" w-1/6 ml-10">
-                        <span className="block">75%</span>
+                    <div className=" w-1/6">
+                        <span className="block">20%</span>
                         {props.editAble ? (
                             <InputFeild
                                 value={data[3].value}
@@ -147,8 +147,8 @@ function Graphs(props) {
                             <span>${props.hrs[3].value}</span>
                         )}
                     </div>
-                    <div className="w-1/6">
-                        <span className="block">90%</span>
+                    <div className=" w-1/6 ml-14 font-semibold ">
+                        <span className="block">50%(Median)</span>
                         {props.editAble ? (
                             <InputFeild
                                 value={data[4].value}
@@ -165,6 +165,46 @@ function Graphs(props) {
                             />
                         ) : (
                             <span>${props.hrs[4].value}</span>
+                        )}
+                    </div>
+                    <div className=" w-1/6 ml-10">
+                        <span className="block">75%</span>
+                        {props.editAble ? (
+                            <InputFeild
+                                value={data[5].value}
+                                handelChange={({ target: { value } }) =>
+                                    setData(
+                                        data.map((item, index) => {
+                                            if (index == 5) {
+                                                item.value = value;
+                                            }
+                                            return item;
+                                        })
+                                    )
+                                }
+                            />
+                        ) : (
+                            <span>${props.hrs[5].value}</span>
+                        )}
+                    </div>
+                    <div className="w-1/6">
+                        <span className="block">90%</span>
+                        {props.editAble ? (
+                            <InputFeild
+                                value={data[6].value}
+                                handelChange={({ target: { value } }) =>
+                                    setData(
+                                        data.map((item, index) => {
+                                            if (index == 6) {
+                                                item.value = value;
+                                            }
+                                            return item;
+                                        })
+                                    )
+                                }
+                            />
+                        ) : (
+                            <span>${props.hrs[6].value}</span>
                         )}
                     </div>
                 </div>

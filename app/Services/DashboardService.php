@@ -105,7 +105,7 @@ class DashboardService extends Facade
     {
         if (!user()->hrs()->count()) {
             collect(config('data.hrs'))->each(fn ($value, $key) => user()->hrs()->create([
-                'pourcentage' => $key,
+                'key' => $key,
                 'value' => $value
             ]));
         }

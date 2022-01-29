@@ -72,13 +72,28 @@ export default function peopleInfluence() {
     function updatepeople() {
         put("/people/update", {
             preserveState: true,
-            onSuccess: onSuccess,
+            onSuccess(page) {
+                onSuccess(page);
+                setEditable(false);
+                setaddNew({
+                    active: false,
+                    name: null,
+                    value: null,
+                });
+            },
         });
     }
     function addNewPeople() {
         Inertia.post("people/create", addNew, {
             preserveScroll: true,
-            onSuccess: onSuccess,
+            onSuccess(page) {
+                onSuccess(page);
+                setaddNew({
+                    active: true,
+                    name: null,
+                    value: null,
+                });
+            },
         });
     }
     function deletePeople(id) {
@@ -93,7 +108,6 @@ export default function peopleInfluence() {
     function onSuccess(page) {
         let people = page.props.people;
         setData(people);
-        setEditable(false);
         setChartData({
             labels: people.map((item) => item.name),
             datasets: [
@@ -103,11 +117,6 @@ export default function peopleInfluence() {
                     borderColor: colors,
                 },
             ],
-        });
-        setaddNew({
-            active: false,
-            name: null,
-            value: null,
         });
     }
 

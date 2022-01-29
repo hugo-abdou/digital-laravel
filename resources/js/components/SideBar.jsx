@@ -43,7 +43,7 @@ export default function SideBar({ isOpen }) {
                         />
                         <SideBarLink
                             href="/wellness-profile"
-                            name="Wellness Profil"
+                            name="Wellness Profile"
                             icon="heart-beat"
                             isOpen={isOpen}
                         />

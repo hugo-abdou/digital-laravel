@@ -72,14 +72,20 @@ export default function ActivitiesInfluence() {
     function updateActivities() {
         put("/activities/update", {
             preserveState: true,
-            onSuccess: onSuccess,
+            onSuccess(page) {
+                onSuccess(page);
+                setEditable(false);
+                setaddNew({
+                    active: false,
+                    name: null,
+                    value: null,
+                });
+            },
         });
     }
-
     function onSuccess(page) {
         let activities = page.props.activities;
         setData(activities);
-        setEditable(false);
         setChartData({
             labels: activities.map((item) => item.name),
             datasets: [
@@ -90,16 +96,18 @@ export default function ActivitiesInfluence() {
                 },
             ],
         });
-        setaddNew({
-            active: false,
-            name: null,
-            value: null,
-        });
     }
     function addNewActivity() {
         Inertia.post("activities/create", addNew, {
             preserveScroll: true,
-            onSuccess: onSuccess,
+            onSuccess(page) {
+                onSuccess(page);
+                setaddNew({
+                    active: true,
+                    name: null,
+                    value: null,
+                });
+            },
         });
     }
     function deleteActivity(id) {
